@@ -94,3 +94,7 @@ css/*.css
 *.swp
 .DS_Store
 Thumbs.db
+.idea/
+css/
+js/
+typings/
