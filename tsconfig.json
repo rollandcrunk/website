@@ -2,9 +2,9 @@
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
-    "allowJs": true,
+/*    "allowJs": true,*/
     "emitDecoratorMetadata": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
 
     "moduleResolution": "node",
     "sourceMap": true,
@@ -26,3 +26,5 @@
     "rewriteTsconfig": false
   }
 }
+
+

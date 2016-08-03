@@ -98,3 +98,5 @@ Thumbs.db
 css/
 js/
 typings/
+app/**/*.js
+app/**/*.js.map
