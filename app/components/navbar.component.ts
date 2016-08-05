@@ -1,7 +1,7 @@
 import { Component, ViewChild, ElementRef } from "@angular/core";
 import { Router, Event, NavigationStart, ROUTER_DIRECTIVES } from "@angular/router";
 
-import {LogoComponent} from "./logo.component";
+import { LogoComponent } from "./logo.component";
 
 
 @Component({

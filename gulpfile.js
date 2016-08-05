@@ -3,7 +3,7 @@ var sass = require('gulp-sass');
 var ts = require("gulp-typescript");
 var flatten = require('gulp-flatten');
 
-var tsProject = ts.createProject("tsconfig.json");
+var tsProject = ts.createProject("typescript/tsconfig.json");
 
 gulp.task('styles', function() {
     gulp.src('scss/**/*.scss')
