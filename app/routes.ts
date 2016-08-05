@@ -1,6 +1,6 @@
-import {provideRouter, RouterConfig} from '@angular/router';
+import { provideRouter, RouterConfig } from '@angular/router';
 
-import {WelcomeComponent, AboutComponent, LinksComponent, NotFoundComponent} from "components";
+import { WelcomeComponent, AboutComponent, LinksComponent, NotFoundComponent } from "./components";
 
 const routes: RouterConfig = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
