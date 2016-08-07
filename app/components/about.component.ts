@@ -1,9 +1,10 @@
-import {Component} from "@angular/core";
+import {Component, ChangeDetectorRef, AfterViewInit} from "@angular/core";
+import {PageAnimation} from "./shared/page.animation";
 
 @Component({
   selector: 'rc-about',
   template: `
-    <div class="container">
+    <div class="container" @pageState="state">
       <div class="page-header m-t-1">
         <h2>About</h2>
       </div>
@@ -20,7 +21,16 @@ import {Component} from "@angular/core";
           <li>Visited 30 states and 11 foreign countries.</li>
         </ul>
     </div>
-  `
+  `,
+  animations: PageAnimation.FADE_IN_ANIMATION
 })
-export class AboutComponent {
+export class AboutComponent implements AfterViewInit {
+  private state: string = PageAnimation.FADE_IN_ANIMATION_INIT_STATE;
+
+  constructor(private changeDetector: ChangeDetectorRef) {}
+
+  ngAfterViewInit(): any {
+    this.state = PageAnimation.FADE_IN_ANIMATION_FINAL_STATE;
+    this.changeDetector.detectChanges();
+  }
 }

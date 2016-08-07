@@ -1,8 +1,9 @@
-import { Component } from "@angular/core";
+import {Component, ChangeDetectorRef, AfterViewInit} from "@angular/core";
+import {PageAnimation} from "./shared/page.animation";
 
 @Component({
   template: `
-    <div class="container">
+    <div class="container" @pageState="state">
       <div class="page-header m-t-1">
         <h2>Home</h2>
       </div>
@@ -16,7 +17,16 @@ import { Component } from "@angular/core";
         find something that piques your interest.
       </p>
     </div>
-  `
+  `,
+  animations: PageAnimation.FADE_IN_ANIMATION
 })
-export class WelcomeComponent {
+export class WelcomeComponent implements AfterViewInit {
+  private state: string = PageAnimation.FADE_IN_ANIMATION_INIT_STATE;
+
+  constructor(private changeDetector: ChangeDetectorRef) {}
+
+  ngAfterViewInit(): any {
+    this.state = PageAnimation.FADE_IN_ANIMATION_FINAL_STATE;
+    this.changeDetector.detectChanges();
+  }
 }
