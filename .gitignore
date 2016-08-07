@@ -100,3 +100,4 @@ js/
 typings/
 app/**/*.js
 app/**/*.js.map
+stash/

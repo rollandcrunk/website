@@ -16,6 +16,7 @@
     "!node_modules/**/*"
   ],
   "exclude": [
+    "stash",
     "node_modules",
     "typings/main",
     "typings/main.d.ts"
