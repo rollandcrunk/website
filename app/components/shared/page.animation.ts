@@ -13,7 +13,7 @@ export class PageAnimation {
    */
   public static FADE_IN_ANIMATION = [
     trigger('pageState', [
-      state(createdState, style({opacity: .25, transform: 'scale(.95)'})),
+      state(createdState, style({opacity: .25, transform: 'scale(.97)'})),
       state(readyState, style({opacity: 1, transform: 'scale(1)'})),
       transition('* <=> *', animate('256ms ease-in'))
     ])
