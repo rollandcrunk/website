@@ -12,6 +12,23 @@ html {
   body {
     margin: 92px auto 60px auto;
 
+    .topic {
+      margin-top: 2rem;
+
+      .blockquote {
+        color: $brand-contrast;
+        font-size: 1.1rem;
+        border-left: 0.25rem solid $blockquote-border-color;
+
+        &>p {
+          font-style: italic;
+          &.blockquote-footer {
+            font-style: normal;
+          }
+        }
+      }
+    }
+
     .navbar-toggler {
       color: $brand-contrast;
     }

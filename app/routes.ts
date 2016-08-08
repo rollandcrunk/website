@@ -6,6 +6,7 @@ const routes: RouterConfig = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: WelcomeComponent },
   { path: 'about', component: AboutComponent },
+  { path: 'about/:id', component: AboutComponent},
   { path: 'links', component: LinksComponent },
   { path: '**', component: NotFoundComponent }
 ];
