@@ -8,7 +8,7 @@
   <nav class="navbar navbar-dark navbar-static-top bg-primary bg-faded">
     <div class="container">
       <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
-        &#9776;
+        <span class="fa fa-navicon"></span>
       </button>
       <a class="navbar-brand" [routerLink]="['/home']" style="float: right;">
         <rc-logo></rc-logo>
@@ -18,8 +18,23 @@
           <li class="nav-item">
             <a class="nav-link" [routerLink]="['/home']" routerLinkActive="active">Home<span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item dropdown">
             <a class="nav-link" [routerLink]="['/about']" routerLinkActive="active">About</a>
+            <a class="dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              <div class="rc-subnav-button">
+                <span class="fa fa-caret-down"></span>
+              </div>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-header">About topics...</li>
+              <li role="separator" class="divider"></li>
+              <li><a>Of note</a></li>
+              <li><a>Gallery</a></li>
+              <li><a>Work</a></li>
+              <li><a>Opinion</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a>Credits</a></li>
+            </ul>
           </li>
           <li class="nav-item">
             <a class="nav-link" [routerLink]="['/links']" routerLinkActive="active">Links</a>

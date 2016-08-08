@@ -12,6 +12,85 @@ html {
   body {
     margin: 92px auto 60px auto;
 
+    .navbar-toggler {
+      color: $brand-contrast;
+    }
+
+    .navbar-nav .nav-link {
+      display: inline-block;
+
+      & + .nav-link {
+        margin-left: .25rem;
+
+        .rc-subnav-button {
+          display: inline-block;
+          color: $brand-contrast;
+          background: $brand-light;
+          text-align: center;
+          line-height: 1rem;
+          border-radius: 25%;
+          height: 1rem;
+          width: 1rem;
+          opacity: .5;
+
+          &:hover,
+          &:active {
+            color: $brand-light;
+            background: $brand-contrast;
+          }
+        }
+      }
+
+      &.active + .nav-link {
+        .rc-subnav-button {
+          color: $brand-light;
+          background: $brand-contrast;
+
+          &:hover,
+          &:active {
+            color: $brand-contrast;
+            background: $brand-light;
+          }
+        }
+      }
+    }
+
+    .dropdown-toggle::after {
+      content: initial;
+    }
+
+    .dropdown-menu {
+
+      background: $body-bg;
+
+      &> li > a {
+        display: block;
+        padding: 3px 20px;
+        clear: both;
+        font-weight: 400;
+        white-space: nowrap;
+
+        &:focus,
+        &:hover {
+          color: $brand-contrast;
+          text-decoration: none;
+          background-color: $gray-lighter;
+        }
+      }
+
+      .dropdown-header {
+        color: $brand-contrast;
+      }
+
+      .divider {
+        height: 1px;
+        margin: 9px 0;
+        overflow: hidden;
+        background-color: $brand-primary;
+        opacity: .5;
+      }
+    }
+
     .footer {
       position: absolute;
       bottom: 0;
@@ -42,15 +121,16 @@ html {
       text-align: center;
       > li {
         display: inline-block;
-        >a {
+        > a {
           display: inline-block;
           font-size: 18px;
-          line-height: 30px;
+          line-height: 34px;
           @include size(32px, 32px);
-          border-radius: 36px;
-          background-color: $link-color;
+          border-radius: 25%;
+          background-color: $brand-primary;
           color: $body-bg;
           margin: 0 3px 3px 0;
+          box-shadow: 1px 1px 3px 0 rgba(73,39,74,1);
           &:hover {
             text-decoration: none;
             background-color: $link-hover-color;
