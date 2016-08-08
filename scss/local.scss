@@ -14,6 +14,7 @@ html {
 
     .topic {
       margin-top: 2rem;
+      border-bottom: 1px dashed $blockquote-border-color;
 
       .blockquote {
         color: $brand-contrast;
@@ -22,6 +23,8 @@ html {
 
         &>p {
           font-style: italic;
+          margin-bottom: .25rem;
+
           &.blockquote-footer {
             font-style: normal;
           }
