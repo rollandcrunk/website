@@ -11,3 +11,5 @@ export const MC_ROUTE_MAP: string =
     + "!4m5!1s0x80d121436bd112e7%3A0x2c6ac2ec5ab225ae!2sBlythe%2C+CA!3m2!1d33.6177725!2d-114.58826069999999!4m5"
     + "!1s0x80824df7ef94579d%3A0x18dfc0742c735b27!2sElk+Creek%2C+CA!3m2!1d39.6050699!2d-122.5398032!5e1!3m2!1sen!2sus"
     + "!4v1471131209168";
+
+export const SEARS_POINT_LAP: string = "https://www.youtube.com/embed/WQPevaUvotI?html5=1&t=66000";

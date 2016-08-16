@@ -10,21 +10,36 @@
     <p>
       Every individual has their own unique set of experiences and events; here are some of mine (in no particular order):
     </p>
-    <ul>
-      <li>
+    <ul class="rc-expandable-list">
+      <li class="rc-expandable" (click)="expand($event)">
         Served 3 years aboard a nuclear attack submarine.
+        <div class="rc-media">
+          <rc-carousel [media]="memoir('sub')"></rc-carousel>
+        </div>
       </li>
-      <li>
+      <li class="rc-expandable" (click)="expand($event)">
         Drove a motorcycle from coast-to-coast across the continental US.
+        <div class="rc-media">
+          <rc-carousel [media]="memoir('ride')"></rc-carousel>
+        </div>
       </li>
-      <li>
+      <li class="rc-expandable" (click)="expand($event)">
         Founded and managed a foreign corporation.
+        <div class="rc-media">
+          <rc-carousel [media]="memoir('business')"></rc-carousel>
+        </div>
       </li>
-      <li>
+      <li class="rc-expandable" (click)="expand($event)">
         Competed in AFM sanctioned motorcycle road racing events.
+        <div class="rc-media">
+          <rc-carousel [media]="memoir('racer')"></rc-carousel>
+        </div>
       </li>
-      <li>
+      <li class="rc-expandable" (click)="expand($event)">
         Visited 30 states and 11 foreign countries.
+        <div class="rc-media">
+          <rc-carousel [media]="memoir('gallery')"></rc-carousel>
+        </div>
       </li>
     </ul>
   </div>
@@ -33,7 +48,7 @@
     <p class="lead">
       Photographs.
     </p>
-    <p><rc-carousel></rc-carousel></p>
+    <p><rc-carousel [media]="memoir('gallery')"></rc-carousel></p>
   </div>
   <div class="topic" id="opinion">
     <h4>Opinion</h4>
