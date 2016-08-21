@@ -5,7 +5,7 @@ import {CarouselMedia} from "./carousel.component";
 
 @Component({
   selector: 'rc-of-note-topic',
-  templateUrl: 'app/components/of-note-topic.component.html',
+  templateUrl: 'app/components/html/of-note-topic.component.html',
   encapsulation: ViewEncapsulation.None,
 })
 export class OfNoteTopic {

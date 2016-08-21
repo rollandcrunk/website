@@ -74,6 +74,15 @@ $timeline-badge-offset:   25px;
         color: inherit;
       }
 
+      .timeline-body {
+        .nav-pills .nav-link {
+          display: block;
+          padding: 0 .35rem;
+          border-radius: .1rem .25rem;
+          font-size: 80%;
+          margin-bottom: 1rem;
+        }
+      }
       .timeline-body > p,
       .timeline-body > ul {
         margin-bottom: 0;

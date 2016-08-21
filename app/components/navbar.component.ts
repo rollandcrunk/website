@@ -7,7 +7,7 @@ const menuVisibleClassName = 'in';
 
 @Component({
   selector: 'rc-navbar',
-  templateUrl: 'app/components/navbar.component.html',
+  templateUrl: 'app/components/html/navbar.component.html',
   directives: [LogoComponent, ROUTER_DIRECTIVES]
 })
 export class NavbarComponent {

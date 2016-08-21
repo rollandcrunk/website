@@ -12,7 +12,7 @@ const expandedClassName = 'rc-expanded';
 
 @Component({
   selector: 'rc-about',
-  templateUrl: 'app/components/about.component.html',
+  templateUrl: 'app/components/html/about.component.html',
   encapsulation: ViewEncapsulation.None,
   animations: PageAnimation.FADE_IN_ANIMATION,
   providers: [MemoirService],
