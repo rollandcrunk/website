@@ -1,5 +1,6 @@
 @import "bootstrap/_variables.scss";
 @import "bootstrap/mixins/_size.scss";
+@import "timeline.scss";
 
 html {
   position: relative;
@@ -130,7 +131,7 @@ html {
         &:before {
           color: $brand-primary;
           padding: 0 .25rem 0 1rem;
-          font: normal normal normal 18px/1 FontAwesome;
+          font: normal normal normal 16px/1 FontAwesome;
           font-weight: 900;
           content: '\f065';
           transition: padding 300ms;
@@ -165,6 +166,56 @@ html {
       }
     }
 
+    /*
+    .carousel-control.right {
+      right: 0;
+      left: auto;
+      background-image: -webkit-gradient(linear,left top,right top,from(rgba(0,0,0,.0001)),to(rgba(0,0,0,.5)));
+      background-image: -webkit-linear-gradient(left,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%);
+      background-image: -o-linear-gradient(left,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%);
+      background-image: linear-gradient(to right,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%);
+      background-repeat: repeat-x;
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
+    }
+    */
+
+    rc-carousel {
+      .card {
+        color: darken($brand-light, 5%);
+        background: $brand-carousel-card-bg;
+        border-radius: .35rem;
+
+        a {
+          color: darken($brand-light, 2%);
+        }
+      }
+    }
+
+    .carousel-control {
+      &:focus {
+        opacity: .5;
+      }
+
+      .fa {
+        position: absolute;
+        top: 50%;
+        z-index: 5;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin-top: -10px;
+        line-height: 1;
+
+        &.fa-chevron-left {
+          left: 5%;
+        }
+
+        &.fa-chevron-right {
+          right: 5%;
+        }
+      }
+    }
+
     .carousel-inner {
       .carousel-item {
         > img {
@@ -172,36 +223,6 @@ html {
         }
         > iframe {
           width: 100%;
-        }
-      }
-    }
-
-    .carousel-control {
-      color: $brand-light;
-      position: absolute;
-      top: 50%;
-      z-index: 5;
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-      line-height: 1;
-
-      &.left {
-        left: 0;
-        right: auto;
-        background-image: none;
-
-        &:hover {
-          background: linear-gradient(to left, rgba(73, 39, 74, 0.0001) 0%, rgba(73, 39, 74, 0.25) 100%) repeat-x;
-        }
-      }
-      &.right {
-        right: 0;
-        left: auto;
-        background-image: none;
-
-        &:hover {
-          background: linear-gradient(to right, rgba(73, 39, 74, 0.0001) 0%, rgba(73, 39, 74, 0.25) 100%) repeat-x;
         }
       }
     }

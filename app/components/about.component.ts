@@ -5,6 +5,8 @@ import {ActivatedRoute} from "@angular/router";
 import {PageAnimation} from "./shared/page.animation";
 import {MemoirService} from "../services/memoir.service";
 import {CarouselComponent, CarouselMedia} from "./carousel.component";
+import {TimelineComponent} from "./timeline.component";
+import {OfNoteTopic} from "./of-note-topic.component";
 
 const expandedClassName = 'rc-expanded';
 
@@ -14,7 +16,7 @@ const expandedClassName = 'rc-expanded';
   encapsulation: ViewEncapsulation.None,
   animations: PageAnimation.FADE_IN_ANIMATION,
   providers: [MemoirService],
-  directives: [CarouselComponent]
+  directives: [CarouselComponent, TimelineComponent]
 })
 export class AboutComponent implements AfterViewInit {
   private state: string = PageAnimation.FADE_IN_ANIMATION_INIT_STATE;
@@ -53,14 +55,20 @@ export class AboutComponent implements AfterViewInit {
         this.renderer.setElementClass(this.selectedNote, expandedClassName, false);
       }
       if (noteItem != oldNoteItem) {
+        this.scrollTo(noteItem);
         this.selectedNote = event.target;
         this.renderer.setElementClass(this.selectedNote, expandedClassName, true);
       }
-      else this.selectedNote = noteItem = null;
+      else this.selectedNote = null;
     }
   }
 
   memoir(title: string): CarouselMedia[] {
     return this.memoirService.getMemoir(title);
   }
+
+  private scrollTo = (item: HTMLElement): void => {
+    item.scrollIntoView(true);
+    window.scrollBy(0, -120);
+  };
 }

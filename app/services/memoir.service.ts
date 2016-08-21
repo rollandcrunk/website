@@ -7,8 +7,7 @@ const dickyB: CarouselMedia = {
   description: `
     <p>
       The <em>Dicky B.</em> A nuclear fast attack submarine home ported at New London Connecticut.
-      Served from February 1977 to December 1979 as a data systems 
-      technician (DS2(SS)) responsible for the repair and maintenance of the 
+      Served as a data systems technician (<em>DS2(SS)</em>) responsible for the repair and maintenance of the 
       <a href="https://en.wikipedia.org/wiki/AN/UYK-7" target="_blank">AN/UYK-7</a> central computer complex. 
     </p>
     <p>
@@ -22,6 +21,15 @@ const dickyB: CarouselMedia = {
       <a href="https://en.wikipedia.org/wiki/Antigua" target="_blank">St. Johns, Antigua</a>.
     </p>
  `
+};
+
+const mcCalendar: CarouselMedia = {
+  src: 'img/dec79.png', media: 'image', title: 'In December',
+  description: `
+    Brrr. Not the month I would have selected if the choice were mine, but fortunate having an late Indian summer
+    that made the whole thing feasible.
+    
+  `
 };
 
 const mcRide: CarouselMedia = {

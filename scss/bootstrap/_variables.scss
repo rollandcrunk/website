@@ -38,10 +38,14 @@ $brand-info:                #5bc0de !default;
 $brand-warning:             #f0ad4e !default;
 $brand-danger:              #d9534f !default;
 
+$brand-secondary:           darken($brand-primary, 5%) !default;;
 $brand-contrast:            #49274a !default;
 $brand-light:               #fdfcff !default;
 $brand-footer:              #ccc8cc !default;
 $brand-footer-contrast:     $brand-contrast !default;
+
+$brand-carousel-card-color: darken($brand-light, 25%) !default;
+$brand-carousel-card-bg: $brand-contrast !default;
 
 // Options
 //
