@@ -3,48 +3,101 @@
     <h4 *ngIf="subject">{{subject}}</h4>
     <ul class="timeline">
       <rc-timeline-event title="Hardware" timeframe="Late 70s - early 80s" badge="first">
-        <ul>
-          <li>And gates, or gates, flip-flops; core memory.</li>
-          <li>Assembly and machine language.</li>
-          <li>Real time systems.</li>
-          <li>Removable disk storage.</li>
-        </ul>
+        <rc-career-highlight [categories]="['technologies', 'organizations', 'titles']" activate="technologies">
+          <ul class="category technologies">
+            <li>And gates, or gates, flip-flops; core memory.</li>
+            <li>Assembly and machine language.</li>
+            <li>Real time systems.</li>
+            <li>Removable disk storage.</li>
+          </ul>
+          <ul class="category organizations">
+            <li>US Navy</li>
+            <li>BTI Computer Systems</li>
+            <li>Formaster</li>
+            <li>Pyramid Technology</li>
+          </ul>
+          <ul class="category titles">
+            <li>Data Systems Technician</li>
+            <li>Technical Instructor</li>
+            <li>Field Service Engineer</li>
+            <li>Technical Support Engineer</li>
+          </ul>
+        </rc-career-highlight>
       </rc-timeline-event>
       <rc-timeline-event [inverted]="true" title="System software" timeframe="mid 80s - mid 90s" badge="second">
-        <ul>
-          <li>UNIX, C, Shell scripting</li>
-          <li>Symbolic debuggers, language tools, symbol table generation.</li>
-          <li>Reference architecture simulator for SPARC/V9 processor.</li>
-          <li>C++, Object oriented programming</li>
-        </ul>
+        <rc-career-highlight [categories]="['technologies', 'organizations', 'titles']" activate="technologies">
+          <ul class="category technologies">
+            <li>UNIX, C, Shell scripting</li>
+            <li>Symbolic debuggers, language tools, symbol table generation.</li>
+            <li>Reference architecture simulator for SPARC/V9 processor.</li>
+            <li>C++, Object oriented programming</li>
+          </ul>
+          <ul class="category organizations">
+            <li>Pyramid Technology</li>
+            <li>Versatec</li>
+            <li>Stratus Computer</li>
+            <li>National University</li>
+            <li>HaL Computer Systems</li>
+          </ul>
+          <ul class="category titles">
+            <li>Sr. Software Instructor</li>
+            <li>Software Engineer</li>
+            <li>Sr. Software Engineer</li>
+            <li>Graduate</li>
+            <li>Manager, Language Tools</li>
+          </ul>
+        </rc-career-highlight>
       </rc-timeline-event>
       <rc-timeline-event title="Early web" timeframe="mid 90s - y2k; connecting people" badge="third">
-        <ul class="nav nav-inline nav-pills">
-          <li class="nav-item">
-            <a class="nav-link active">Technologies</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link">Companies</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link">Titles</a>
-          </li>
-        </ul>
-        <p>
-        <ul>
-          <li>Java, HTML, JavaScript.</li>
-          <li>HTTP, LDAP, RMI.</li>
-          <li>Object and relational databases.</li>
-          <li>Specialized application servers.</li>
-        </ul>
+        <rc-career-highlight [categories]="['technologies', 'organizations', 'titles']" activate="technologies">
+          <ul class="category technologies">
+            <li>Java, HTML, JavaScript.</li>
+            <li>HTTP, LDAP, RMI.</li>
+            <li>Object and relational databases.</li>
+            <li>Specialized application servers.</li>
+          </ul>
+          <ul class="category organizations">
+            <li>WebFlow</li>
+            <li>FullTime Systems</li>
+            <li>Accentuate Systems</li>
+            <li>Netscape Communications</li>
+          </ul>
+          <ul class="category titles">
+            <li>Director, Open Systems Development</li>
+            <li>Senior Member of Technical Staff</li>
+            <li>Chief Technical Officer</li>
+            <li>Website Application Architect</li>
+          </ul>
+        </rc-career-highlight>
       </rc-timeline-event>
       <rc-timeline-event  [inverted]="true" title="Infrastructure" timeframe="y2k - late 00s" badge="fourth">
-        <ul>
-          <li>Virtualization; horizontal and vertical scaling.</li>
-          <li>Provisioning, push deployment, VM instantiation and isolation.</li>
-          <li>High availability monitoring and control</li>
-          <li>Servlet, JSP, JDBC</li>
-        </ul>
+        <rc-career-highlight [categories]="['technologies', 'organizations', 'titles']" activate="technologies">
+          <ul class="category technologies">
+            <li>Virtualization; horizontal and vertical scaling.</li>
+            <li>Provisioning, push deployment, VM instantiation and isolation.</li>
+            <li>High availability monitoring and control</li>
+            <li>Servlet, JSP, JDBC</li>
+          </ul>
+          <ul class="category organizations">
+            <li>Ejacent</li>
+            <li>Simteria Philippines</li>
+            <li>SyncObs</li>
+            <li>Veritas</li>
+            <li>Symantec</li>
+            <li>Kite Dance</li>
+            <li>ClearApp</li>
+            <li>Oracle</li>
+            <li>Aryaka Networks</li>
+          </ul>
+          <ul class="category titles">
+            <li>Software Architect</li>
+            <li>Chief Executive Officer</li>
+            <li>Software Consultant</li>
+            <li>Senior Principal Software Engineer</li>
+            <li>Principal Member of Technical Staff</li>
+            <li>Principal Software Engineer</li>
+          </ul>
+        </rc-career-highlight>
       </rc-timeline-event>
     </ul>
   </div>
