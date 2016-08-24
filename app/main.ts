@@ -11,6 +11,7 @@ import {
   LinksComponent,
   NotFoundComponent
 } from "./components";
+import {PageComponent} from "./components/page.component";
 
 @Component({
   selector: 'rc-main',
@@ -20,7 +21,7 @@ import {
     <rc-footer></rc-footer>
   `,
   directives: [ NavbarComponent, FooterComponent, ROUTER_DIRECTIVES],
-  precompile: [ WelcomeComponent, AboutComponent, LinksComponent, NotFoundComponent ]
+  precompile: [ PageComponent, WelcomeComponent, AboutComponent, LinksComponent, NotFoundComponent ]
 })
 export class MainComponent {
 }

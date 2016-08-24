@@ -6,7 +6,7 @@ import {CarouselMedia, CarouselComponent} from "./carousel.component";
 @Component({
   selector: 'rc-gallery-topic',
   template: `
-    <div class="topic" id="gallery">
+    <div class="place topic" id="gallery">
       <h4>Gallery</h4>
       <p class="lead">
         Photographs.

@@ -2,8 +2,9 @@ import {Component, ChangeDetectorRef, AfterViewInit} from "@angular/core";
 import {PageAnimation} from "./shared/page.animation";
 
 @Component({
+  selector: 'rc-welcome',
   template: `
-    <div class="container" @pageState="state">
+    <div id="home" class="place container" @pageState="state">
       <div class="page-header m-t-1">
         <h2>Home</h2>
       </div>

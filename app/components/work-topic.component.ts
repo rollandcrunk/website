@@ -1,4 +1,4 @@
-import {ViewEncapsulation, Component, Renderer} from "@angular/core";
+import {ViewEncapsulation, Component} from "@angular/core";
 import {TimelineComponent} from "./timeline.component";
 
 @Component({
