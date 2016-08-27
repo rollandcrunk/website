@@ -6,34 +6,11 @@
   <p>
     Until I have a blog up, here are some quotes that describe my views:
   </p>
-  <div class="blockquote">
-    <p>Never impose on others what you would not choose for yourself.</p>
-    <p class="blockquote-footer">Confucius</p>
+  <div *ngFor="let quote of quotes" class="blockquote">
+    <p>{{quote.text}}</p>
+    <p class="blockquote-footer">{{quote.author}}</p>
   </div>
-  <div class="blockquote">
-    <p>The government that governs least, governs best.</p>
-    <p class="blockquote-footer">Thomas Paine</p>
-  </div>
-  <div class="blockquote">
-    <p>The man that reads nothing at all is better educated than the man that reads nothing but newspapers.</p>
-    <p class="blockquote-footer">Thomas Jefferson</p>
-  </div>
-  <div class="blockquote">
-    <p>If tyranny and oppression come to this land, it will be in the guise of fighting a foreign enemy.</p>
-    <p class="blockquote-footer">James Madison</p>
-  </div>
-  <div class="blockquote">
-    <p>Only two things are infinite, the universe and human stupidity, and I'm not sure about the former.</p>
-    <p class="blockquote-footer">Albert Einstein</p>
-  </div>
-  <div class="blockquote">
-    <p>Whenever you find yourself on the side of the majority, it is time to pause and reflect.</p>
-    <p class="blockquote-footer">Mark Twain</p>
-  </div>
-  <div class="blockquote">
-    <p>The liberties of a people never were, nor ever will be, secure, when the transactions of their rulers may be concealed from them.</p>
-    <p class="blockquote-footer">Patrick Henry</p>
-  </div>
+
   <p>And some of my own observations:</p>
   <div class="blockquote">
     <p>The most elegant solution is generally the most obvious one.</p>
