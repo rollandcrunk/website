@@ -34,9 +34,11 @@ export interface CarouselMedia {
           <div class="carousel-inner" role="listbox">
             <div *ngFor="let item of media; let i = index;" class="carousel-item" [class.active]="i == 0">
               <img *ngIf="item.media == 'image'" src="{{item.src}}" alt="{{item.title}}" data-holder-rendered="true">
-              <iframe *ngIf="item.media == 'iframe'" [src]="trustResource(item.src)" name="{{item.title}}" 
-                      height="289" width="440"
-                      frameborder="0" style="border:0" data-holder-rendered="true"></iframe>
+              <div *ngIf="item.media == 'iframe'" class="rc-video-clip">
+                <iframe  [src]="trustResource(item.src)" name="{{item.title}}" 
+                        height="315" width="560"
+                        frameborder="0" style="border:0" data-holder-rendered="true"></iframe>
+              </div>
             </div>
           </div>
           <a *ngIf="media.length > 1" class="left carousel-control" href="#{{carouselId}}" role="button" data-slide="prev" (click)="back()">
