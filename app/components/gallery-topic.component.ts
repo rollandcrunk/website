@@ -1,6 +1,6 @@
-import {ViewEncapsulation, Component, Renderer} from "@angular/core";
+import {ViewEncapsulation, Component} from "@angular/core";
 
-import {MemoirService} from "../services/memoir.service";
+import {MemoirService} from "../services";
 import {CarouselMedia, CarouselComponent} from "./carousel.component";
 
 @Component({

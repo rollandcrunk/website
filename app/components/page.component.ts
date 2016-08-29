@@ -1,12 +1,20 @@
-import {Component, ChangeDetectorRef, AfterViewInit, ViewEncapsulation, OnInit, ElementRef} from "@angular/core";
+import {
+  Component,
+  ChangeDetectorRef,
+  OnInit,
+  AfterViewInit,
+  ViewEncapsulation,
+  ElementRef,
+  ChangeDetectionStrategy
+} from "@angular/core";
 
 import {ActivatedRoute} from "@angular/router";
 
 import {PageAnimation} from "./shared/page.animation";
-import {MemoirService} from "../services/memoir.service";
 import {WelcomeComponent} from "./welcome.component";
 import {AboutComponent} from "./about.component";
 import {LinksComponent} from "./links.component";
+import {MemoirService, TooltipService} from "../services";
 
 class Place {
   id: string;
@@ -22,8 +30,9 @@ class Place {
   `,
   encapsulation: ViewEncapsulation.None,
   animations: PageAnimation.FADE_IN_ANIMATION,
-  providers: [MemoirService],
-  directives: [WelcomeComponent, AboutComponent, LinksComponent]
+  providers: [MemoirService, TooltipService],
+  directives: [WelcomeComponent, AboutComponent, LinksComponent],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PageComponent implements OnInit, AfterViewInit {
   private state: string = PageAnimation.FADE_IN_ANIMATION_INIT_STATE;
@@ -33,7 +42,8 @@ export class PageComponent implements OnInit, AfterViewInit {
 
   constructor(private pageElement: ElementRef,
               private route: ActivatedRoute,
-              private changeDetector: ChangeDetectorRef) {}
+              private changeDetector: ChangeDetectorRef,
+              private tooltipService: TooltipService) {}
 
   ngOnInit(): any {
     this.catalog()
@@ -41,6 +51,8 @@ export class PageComponent implements OnInit, AfterViewInit {
 
   // @fixme - better technique for dom access and manipulation.
   ngAfterViewInit(): any {
+    this.tooltipService.enableTooltips('rc-page');
+
     this.route.params.subscribe(params => {
       let id = params['id'];
       if (id) {
@@ -64,5 +76,5 @@ export class PageComponent implements OnInit, AfterViewInit {
       let topic = places[i];
       if (topic.id) this.places.push({ id: topic.id, top: topic.offsetTop });
     }
-  }
+  };
 }

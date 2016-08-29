@@ -1,4 +1,4 @@
-import {ViewEncapsulation, Component, Input, OnInit, ElementRef, Renderer} from "@angular/core";
+import {ViewEncapsulation, Component, Input, ElementRef, Renderer, AfterViewInit} from "@angular/core";
 
 @Component({
   selector: 'rc-career-highlight',
@@ -27,14 +27,14 @@ import {ViewEncapsulation, Component, Input, OnInit, ElementRef, Renderer} from 
   `],
   encapsulation: ViewEncapsulation.None,
 })
-export class CareerHighlightComponent implements OnInit {
+export class CareerHighlightComponent implements AfterViewInit {
   @Input() activate: string;
   @Input() categories: string[];
 
   constructor(private elementRef: ElementRef,
               private renderer: Renderer) {}
 
-  ngOnInit(): any {
+  ngAfterViewInit(): any {
     this.activateContent(this.activate);
   }
 

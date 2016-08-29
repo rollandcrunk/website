@@ -7,8 +7,12 @@ import {ViewEncapsulation, Component, Input} from "@angular/core";
       <div class="timeline-badge {{badge}}"><i class="glyphicon glyphicon-check"></i></div>
       <div class="timeline-panel">
         <div class="timeline-heading">
-          <h5 *ngIf="title" class="timeline-title">{{title}}</h5>
-          <p *ngIf="timeframe"><small class="text-muted"><i class="glyphicon glyphicon-time"></i>{{timeframe}}</small></p>
+          <h5 *ngIf="title" class="timeline-title">
+            {{title}}
+            <small class="text-muted"><i class="fa fa-clock-o"></i> 
+              {{timeframe}}
+            </small>
+          </h5>
         </div>
         <div class="timeline-body">
           <ng-content></ng-content>
@@ -16,6 +20,17 @@ import {ViewEncapsulation, Component, Input} from "@angular/core";
       </div>
     </li>
   `,
+  styles: [`
+    h5.timeline-title {
+      padding-bottom: .75rem;
+    }
+    
+    h5.timeline-title > small {
+      display: block;
+      font-size: 60%;
+      line-height: 1.5;
+    }
+  `],
   encapsulation: ViewEncapsulation.None,
 })
 export class TimelineEventComponent {
