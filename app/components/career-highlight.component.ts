@@ -35,7 +35,7 @@ export class CareerHighlightComponent implements AfterViewInit {
               private renderer: Renderer) {}
 
   ngAfterViewInit(): any {
-    this.activateContent(this.activate);
+    if (this.activate) this.activateContent(this.activate);
   }
 
   onClick(category: string) {

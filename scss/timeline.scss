@@ -1,3 +1,4 @@
+@import "mixins/_vendor.scss";
 @import "bootstrap/_variables.scss";
 
 $timeline-color:          rgba(148, 97, 142, .25);
@@ -78,9 +79,10 @@ $timeline-badge-offset:   25px;
         .nav-pills .nav-link {
           display: block;
           padding: 0 .35rem;
-          border-radius: .1rem .25rem;
+          border: 1px solid $brand-primary;
+          border-radius: .15rem;
           font-size: 80%;
-          margin-bottom: 1rem;
+          margin-bottom: .25rem;
         }
       }
       .timeline-body > p,
@@ -161,6 +163,21 @@ $timeline-badge-offset:   25px;
   }
 }
 
+@media (max-width: 400px) {
+  rc-career-highlight {
+    .nav-pills {
+      li.nav-item {
+        float: none;
+      }
+    }
+    .nav-inline {
+      li.nav-item {
+        display: block;
+        min-width: 100px;
+      }
+    }
+  }
+}
 @media (max-width: 767px) {
   ul.timeline:before {
     left: 40px;
@@ -169,9 +186,7 @@ $timeline-badge-offset:   25px;
   ul.timeline rc-timeline-event > li,
   ul.timeline > li {
     > .timeline-panel {
-      width: calc(100% - 90px);
-      width: -moz-calc(100% - 90px);
-      width: -webkit-calc(100% - 90px);
+      @include calc(width, '100% - 90px');
       float: right;
 
       &:before {
