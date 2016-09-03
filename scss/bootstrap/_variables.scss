@@ -372,7 +372,7 @@ $zindex-modal:             1050 !default;
 
 // Navbar
 
-$navbar-border-radius:              0 0 $border-radius !default;
+$navbar-border-radius:              0 0 $border-radius $border-radius !default;
 $navbar-padding-horizontal:         $spacer !default;
 $navbar-padding-vertical:           ($spacer / 2) !default;
 

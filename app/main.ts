@@ -1,17 +1,20 @@
-import { Component } from "@angular/core";
-import { bootstrap } from '@angular/platform-browser-dynamic';
-import { ROUTER_DIRECTIVES } from "@angular/router";
+import {Component} from "@angular/core";
+import {bootstrap} from '@angular/platform-browser-dynamic';
+import {ROUTER_DIRECTIVES} from "@angular/router";
 
-import { rcRouterProviders } from './routes';
+import {rcRouterProviders} from './routes';
+import {StyleConfig} from "./style.config";
+
 import {
   NavbarComponent,
+  PageComponent,
   FooterComponent,
   WelcomeComponent,
   AboutComponent,
   LinksComponent,
   NotFoundComponent
 } from "./components";
-import {PageComponent} from "./components/page.component";
+
 import {PlaceChangeEvent} from "./event/place-change.event";
 
 @Component({
@@ -23,7 +26,7 @@ import {PlaceChangeEvent} from "./event/place-change.event";
       <rc-footer></rc-footer>
     </div>
   `,
-  providers: [PlaceChangeEvent],
+  providers: [StyleConfig, PlaceChangeEvent],
   directives: [ NavbarComponent, FooterComponent,  ROUTER_DIRECTIVES],
   precompile: [ PageComponent, WelcomeComponent, AboutComponent, LinksComponent, NotFoundComponent ]
 })

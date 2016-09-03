@@ -11,7 +11,7 @@ export class LinkForDirective {
     placeChangeEvent.subscribe((items) => this.refresh(items));
   }
 
-  private refresh(items: string[]): void {
+  private refresh = (items: string[]): void => {
     console.log('refresh: ' + this.linkFor + ' contained ind' + items + ': ' + (items.indexOf(this.linkFor) >= 0));
     this.renderer.setElementClass(this.elementRef.nativeElement, 'active', items.indexOf(this.linkFor) >= 0);
   }

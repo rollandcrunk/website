@@ -15,6 +15,7 @@ import {AboutComponent} from "./about.component";
 import {LinksComponent} from "./links.component";
 import {MemoirService, TooltipService} from "../services";
 import {ScrollSpy} from "../directives/scroll-spy.directive";
+import {StyleConfig} from "../style.config";
 
 
 @Component({
@@ -35,9 +36,14 @@ import {ScrollSpy} from "../directives/scroll-spy.directive";
 export class PageComponent implements OnInit, AfterViewInit {
   private state: string = PageAnimation.FADE_IN_ANIMATION_INIT_STATE;
 
-  constructor(private route: ActivatedRoute,
+  private fixedArtifactsTop = 0;
+
+  constructor(styleConfig: StyleConfig,
+              private route: ActivatedRoute,
               private changeDetector: ChangeDetectorRef,
-              private tooltipService: TooltipService) {}
+              private tooltipService: TooltipService) {
+    this.fixedArtifactsTop = styleConfig.fixedArtifactsTop;
+  }
 
   ngOnInit(): any {
   }
@@ -51,7 +57,7 @@ export class PageComponent implements OnInit, AfterViewInit {
       if (id) {
         let anchor = document.getElementById(id);
         if (anchor) {
-          document.body.scrollTop = anchor.offsetTop - 87;
+          document.body.scrollTop = anchor.offsetTop - this.fixedArtifactsTop;
           this.state = PageAnimation.FADE_IN_ANIMATION_INIT_STATE;
           this.changeDetector.detectChanges();
         }
