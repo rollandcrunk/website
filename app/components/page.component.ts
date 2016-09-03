@@ -4,7 +4,6 @@ import {
   OnInit,
   AfterViewInit,
   ViewEncapsulation,
-  ElementRef,
   ChangeDetectionStrategy
 } from "@angular/core";
 
@@ -15,38 +14,32 @@ import {WelcomeComponent} from "./welcome.component";
 import {AboutComponent} from "./about.component";
 import {LinksComponent} from "./links.component";
 import {MemoirService, TooltipService} from "../services";
+import {ScrollSpy} from "../directives/scroll-spy.directive";
 
-class Place {
-  id: string;
-  top: number;
-}
 
 @Component({
   selector: 'rc-page',
   template: `
-    <rc-welcome></rc-welcome>
-    <rc-about></rc-about>
-    <rc-links></rc-links>
+    <div rc-scroll-spy="place">
+      <rc-welcome></rc-welcome>
+      <rc-about></rc-about>
+      <rc-links></rc-links>
+    </div>
   `,
   encapsulation: ViewEncapsulation.None,
   animations: PageAnimation.FADE_IN_ANIMATION,
   providers: [MemoirService, TooltipService],
-  directives: [WelcomeComponent, AboutComponent, LinksComponent],
+  directives: [ScrollSpy, WelcomeComponent, AboutComponent, LinksComponent],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PageComponent implements OnInit, AfterViewInit {
   private state: string = PageAnimation.FADE_IN_ANIMATION_INIT_STATE;
 
-  // @todo - scroll spy
-  private places: Place[] = [];
-
-  constructor(private pageElement: ElementRef,
-              private route: ActivatedRoute,
+  constructor(private route: ActivatedRoute,
               private changeDetector: ChangeDetectorRef,
               private tooltipService: TooltipService) {}
 
   ngOnInit(): any {
-    this.catalog()
   }
 
   // @fixme - better technique for dom access and manipulation.
@@ -69,12 +62,4 @@ export class PageComponent implements OnInit, AfterViewInit {
       this.changeDetector.detectChanges();
     });
   }
-
-  private catalog = () => {
-    let places = this.pageElement.nativeElement.getElementsByClassName('place');
-    for (let i = 0; i < places.length; ++i) {
-      let topic = places[i];
-      if (topic.id) this.places.push({ id: topic.id, top: topic.offsetTop });
-    }
-  };
 }

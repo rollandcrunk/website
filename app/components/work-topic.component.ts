@@ -9,7 +9,7 @@ import {TrustedContentComponent} from "./trusted-content.component";
 @Component({
   selector: 'rc-work-topic',
   template: `
-    <div class="topic" id="work">
+    <div class="topic place" id="work">
       <h4>Work</h4>
       <p class="lead">
         How I feed myself.

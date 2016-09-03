@@ -11,6 +11,7 @@
     'rxjs':                       'node_modules/rxjs',
 
     'components':                 'app/components',
+    'directives':                 'app/directives',
     'services':                   'app/services'
   };
   // packages tells the System loader how to load when no filename and/or no extension
@@ -19,6 +20,7 @@
     'rxjs':                       { defaultExtension: 'js' },
     'angular2-in-memory-web-api': { main: 'index.js', defaultExtension: 'js' },
     'components':                 { main: 'index.js', defaultExtension: 'js' },
+    'directives':                 { main: 'index.js', defaultExtension: 'js' },
     'services':                   { main: 'index.js', defaultExtension: 'js' },
   };
   var ngPackageNames = [

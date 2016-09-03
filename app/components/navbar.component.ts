@@ -1,14 +1,15 @@
-import { Component, ViewChild, ElementRef, Renderer } from "@angular/core";
-import { Router, Event, NavigationStart, ROUTER_DIRECTIVES } from "@angular/router";
+import {Component, ViewChild, ElementRef, Renderer} from "@angular/core";
+import {Router, Event, NavigationStart, ROUTER_DIRECTIVES} from "@angular/router";
 
-import { LogoComponent } from "./logo.component";
+import {LogoComponent} from "./logo.component";
+import {LinkForDirective} from "../directives";
 
 const menuVisibleClassName = 'in';
 
 @Component({
   selector: 'rc-navbar',
   templateUrl: 'app/components/html/navbar.component.html',
-  directives: [LogoComponent, ROUTER_DIRECTIVES]
+  directives: [LogoComponent, LinkForDirective, ROUTER_DIRECTIVES]
 })
 export class NavbarComponent {
   @ViewChild('menuToggle') navbarElement: ElementRef;
@@ -22,5 +23,5 @@ export class NavbarComponent {
     if (event instanceof NavigationStart && this.navbarElement) {
       this.renderer.setElementClass(this.navbarElement.nativeElement, menuVisibleClassName, false);
     }
-  }
+  };
 }

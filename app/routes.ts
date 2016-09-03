@@ -1,7 +1,6 @@
 import { provideRouter, RouterConfig } from '@angular/router';
 
-import { WelcomeComponent, AboutComponent, LinksComponent, NotFoundComponent } from "./components";
-import {PageComponent} from "./components/page.component";
+import {PageComponent, NotFoundComponent} from "./components";
 
 const routes: RouterConfig = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },

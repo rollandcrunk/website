@@ -12,15 +12,19 @@ import {
   NotFoundComponent
 } from "./components";
 import {PageComponent} from "./components/page.component";
+import {PlaceChangeEvent} from "./event/place-change.event";
 
 @Component({
   selector: 'rc-main',
   template: `
-    <rc-navbar></rc-navbar>
-    <router-outlet></router-outlet>
-    <rc-footer></rc-footer>
+    <div>
+      <rc-navbar></rc-navbar>
+      <router-outlet></router-outlet>
+      <rc-footer></rc-footer>
+    </div>
   `,
-  directives: [ NavbarComponent, FooterComponent, ROUTER_DIRECTIVES],
+  providers: [PlaceChangeEvent],
+  directives: [ NavbarComponent, FooterComponent,  ROUTER_DIRECTIVES],
   precompile: [ PageComponent, WelcomeComponent, AboutComponent, LinksComponent, NotFoundComponent ]
 })
 export class MainComponent {
