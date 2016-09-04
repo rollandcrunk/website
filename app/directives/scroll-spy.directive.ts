@@ -29,13 +29,9 @@ export class ScrollSpy implements AfterViewInit {
 
   @HostListener('window:scroll', [])
   onScroll() {
-    let top = document.body.scrollTop;
-
     let places = this.pseudoPlaces().concat(this.findAll().map((place) => place.id));
-    if (places) {
+    if (places)
       this.placeChangeEvent.emit(places);
-      console.log("top: " + top + ", yields: " + JSON.stringify(places));
-    }
   }
 
   private catalog = (className: string) => {
@@ -44,7 +40,6 @@ export class ScrollSpy implements AfterViewInit {
       let topic: HTMLElement = places[i];
       if (topic.id) {
         this.places.push(this.placeFromElement(topic));
-        console.log("cataloging: " + JSON.stringify(this.places[i]));
       }
     }
   };
@@ -55,7 +50,7 @@ export class ScrollSpy implements AfterViewInit {
       top: element.offsetTop - this.fixedArtifactsTop * 2,
       bottom: element.offsetTop + element.clientHeight - this.fixedArtifactsTop * 2
     }
-  }
+  };
 
   private locationPredicate= (place: Place) => {
     let top = document.body.scrollTop;

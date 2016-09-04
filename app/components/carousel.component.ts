@@ -1,6 +1,6 @@
 import {Component, ViewEncapsulation, Input} from "@angular/core";
 
-import { PageAnimation } from "./shared/page.animation";
+import {PageAnimation} from "./shared/page.animation";
 
 import {
   SafeHtml,
@@ -25,14 +25,9 @@ export interface CarouselMedia {
     <div class="row">
       <div class="col-lg-6">
         <div id="{{carouselId}}" class="carousel slide"
-             data-keyboard="true" data-ride="carousel" data-interval="0">
-          <ol *ngIf="media.length > 1" class="carousel-indicators">
-            <li *ngFor="let item of media; let i = index;" [class.active]="i == 0"
-                 attr.data-slide-to="i" attr.data-target="{{carouselId}}">
-            </li>
-          </ol>
+             data-keyboard="true" data-interval="0">
           <div class="carousel-inner" role="listbox">
-            <div *ngFor="let item of media; let i = index;" class="carousel-item" [class.active]="i == 0">
+            <div *ngFor="let item of media; let i = index;" class="carousel-item" [class.active]="isActive(i)">
               <img *ngIf="item.media == 'image'" src="{{item.src}}" alt="{{item.title}}" data-holder-rendered="true">
               <div *ngIf="item.media == 'iframe'" class="rc-video-clip">
                 <iframe  [src]="trustResource(item.src)" name="{{item.title}}" 
@@ -41,11 +36,18 @@ export interface CarouselMedia {
               </div>
             </div>
           </div>
-          <a *ngIf="media.length > 1" class="left carousel-control" href="#{{carouselId}}" role="button" data-slide="prev" (click)="back()">
+        </div>
+        <div class="carousel-control-panel">
+          <a *ngIf="media.length > 1" class="left carousel-control" role="button" (click)="back()" data-slide="prev">
             <span class="fa fa-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
+            <span class="sr-only">Previous</span> 
           </a>
-          <a *ngIf="media.length > 1" class="right carousel-control" href="#{{carouselId}}" role="button" data-slide="next" (click)="forward()">
+          <ol *ngIf="media.length > 1" class="carousel-indicators">
+            <li *ngFor="let item of media; let i = index;" [class.active]="i == activeIndex"
+                 attr.data-slide-to="{{i}}" attr.data-target="{{carouselId}}" (click)="direct(i)"> 
+            </li>
+          </ol>
+          <a *ngIf="media.length > 1" class="right carousel-control" role="button" (click)="forward()"  data-slide="next">
             <span class="fa fa-chevron-right" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
           </a>
@@ -72,14 +74,9 @@ export class CarouselComponent {
   private carouselId = "rc-carousel-id" + CarouselComponent.instance++;
   private activeIndex = 0;
 
-  @Input('media')
-  media: CarouselMedia[] = [];
+  @Input('media') media: CarouselMedia[] = [];
 
   constructor(private sanitizer: DomSanitizationService) {}
-
-  clickDestination(image: CarouselMedia): string {
-    return image.destination || '#';
-  }
 
   trustHtml = (resource: string): SafeHtml => {
     return this.sanitizer.bypassSecurityTrustHtml(resource);
@@ -89,11 +86,19 @@ export class CarouselComponent {
     return this.sanitizer.bypassSecurityTrustResourceUrl(resource);
   };
 
-  back() {
-    this.activeIndex = (this.activeIndex == 0) ? this.media.length - 1 : this.activeIndex - 1;
-  }
+  isActive = (index: number): boolean => {
+    return this.activeIndex == index;
+  };
 
-  forward() {
-    this.activeIndex = (this.activeIndex + 1) % this.media.length;
-  }
+  back = () => {
+    this.direct((this.activeIndex == 0) ? this.media.length - 1 : this.activeIndex - 1);
+  };
+
+  forward = () => {
+    this.direct(this.activeIndex + 1);
+  };
+
+  direct = (index: number) => {
+    this.activeIndex = index % this.media.length;
+  };
 }
