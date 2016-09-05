@@ -190,6 +190,7 @@ html {
         list-style: none;
         margin: 0 auto;
         padding-top: .15rem;
+        z-index: $zindex-navbar;
       }
 
       li {
@@ -203,7 +204,6 @@ html {
           height: 8px;
           width: 12px;
           background: $brand-contrast;
-          //border-color: $brand-contrast;
         }
 
         + li, + li.active {
@@ -239,6 +239,8 @@ html {
     }
 
     .carousel-inner {
+      background: $brand-contrast;
+
       .carousel-item {
         > img {
           width: 100%;
