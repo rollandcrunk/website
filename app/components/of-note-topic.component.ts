@@ -1,6 +1,6 @@
 import {ViewEncapsulation, Component, Renderer} from "@angular/core";
 
-import {MemoirService} from "../services/memoir.service";
+import {MemoirService} from "../services";
 import {CarouselMedia, CarouselComponent} from "./carousel.component";
 
 const expandedClassName = 'rc-expanded';
@@ -40,6 +40,7 @@ export class OfNoteTopicComponent {
 
   private scrollTo = (item: HTMLElement): void => {
     item.scrollIntoView(true);
-    window.scrollBy(0, -120);
+    // @fixme: use style config.
+    window.scrollBy(0, -87);
   };
 }
