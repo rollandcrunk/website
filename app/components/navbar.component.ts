@@ -15,11 +15,11 @@ const underClassName = 'under';
   templateUrl: 'app/components/html/navbar.component.html',
   styles: [`
     .navbar.scroll {
-      box-shadow: 0 4px 5px -2px rgba(73, 39, 74, .45);
+      box-shadow: 0 2px 2px 0 rgba(73,39,74,0.66);
     }
     
     .navbar.scroll.under {
-        box-shadow: 0 6px 5px -2px rgba(73, 39, 74, 0.65);
+        box-shadow: 0 4px 2px 0 rgba(73,39,74,0.33);
       }
   `],
   directives: [LogoComponent, LinkForDirective, ROUTER_DIRECTIVES]
