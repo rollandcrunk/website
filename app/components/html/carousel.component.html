@@ -3,12 +3,17 @@
     <div id="{{carouselId}}" class="carousel slide"
          data-keyboard="true" data-interval="0">
       <div class="carousel-inner" role="listbox">
-        <div *ngFor="let item of media; let i = index;" class="carousel-item" [class.active]="isActive(i, item)" @mediaState="state">
+        <div *ngFor="let item of media; let i = index;" class="carousel-item"
+             [class.active]="isActive(i, item)" @mediaState="state">
           <img *ngIf="item.media == 'image'" src="{{item.src}}" alt="{{item.title}}" data-holder-rendered="true">
           <div *ngIf="item.media == 'iframe'" class="rc-video-clip">
             <iframe  [src]="trustResource(item.src)" name="{{item.title}}"
                      height="315" width="560"
                      frameborder="0" style="border:0" data-holder-rendered="true"></iframe>
+          </div>
+          <div *ngIf="item.media == 'image'" class="carousel-overlay">
+            <a class="left carousel-control-overlay" role="button" (click)="back($event)" data-slide="prev"></a>
+            <a class="right carousel-control-overlay" role="button" (click)="forward($event)"  data-slide="next"></a>
           </div>
         </div>
       </div>
