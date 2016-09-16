@@ -11,7 +11,7 @@
                      height="315" width="560"
                      frameborder="0" style="border:0" data-holder-rendered="true"></iframe>
           </div>
-          <div *ngIf="item.media == 'image'" class="carousel-overlay">
+          <div *ngIf="media.length > 1 && item.media == 'image'" class="carousel-overlay">
             <a class="left carousel-control-overlay" role="button" (click)="back($event)" data-slide="prev"></a>
             <a class="right carousel-control-overlay" role="button" (click)="forward($event)"  data-slide="next"></a>
           </div>
@@ -39,7 +39,7 @@
   <div class="col-lg-6">
     <div *ngIf="media.length > 0" class="card">
       <div class="card-block">
-        <h4 class="card-title">{{media[activeIndex].title}}</h4>
+        <h4 class="card-title"><span [innerHtml]="trustHtml(media[activeIndex].title)"></span></h4>
         <p *ngIf="media[activeIndex].description" class="card-text">
           <span [innerHtml]="trustHtml(media[activeIndex].description)"></span>
         </p>
