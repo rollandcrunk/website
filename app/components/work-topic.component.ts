@@ -18,7 +18,7 @@ import {TrustedContentComponent} from "./trusted-content.component";
         I do something with computers is the gist of it. The roles and technologies have changed
         over the years, and I consider myself truly fortunate to work in a field that continues
         to offer interesting and exciting challenges, and where learning is a enduring experience.
-        The short story is, I develop commercial grade computer software--which to me is the most
+        The short story is, I develop commercial grade computer software&mdash;which to me is the most
         fun that can be had with a computer; a longer story is below.
       </p>
       <p>
