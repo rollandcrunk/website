@@ -13,7 +13,7 @@ import {PageAnimation} from "./shared/page.animation";
 import {WelcomeComponent} from "./welcome.component";
 import {AboutComponent} from "./about.component";
 import {LinksComponent} from "./links.component";
-import {MemoirService, TooltipService} from "../services";
+import {AnalyticsService, MemoirService, TooltipService} from "../services";
 import {ScrollSpy} from "../directives/scroll-spy.directive";
 import {StyleConfig} from "../style.config";
 
@@ -41,6 +41,7 @@ export class PageComponent implements OnInit, AfterViewInit {
   constructor(styleConfig: StyleConfig,
               private route: ActivatedRoute,
               private changeDetector: ChangeDetectorRef,
+              private analyticsService: AnalyticsService,
               private tooltipService: TooltipService) {
     this.fixedArtifactsTop = styleConfig.fixedArtifactsTop;
   }
@@ -51,15 +52,16 @@ export class PageComponent implements OnInit, AfterViewInit {
   // @fixme - better technique for dom access and manipulation.
   ngAfterViewInit(): any {
     this.tooltipService.enableTooltips('rc-page');
-
-    this.route.params.subscribe(params => {
+      this.route.params.subscribe(params => {
       let id = params['id'];
+      console.debug('params id: ' + id);
       if (id) {
         let anchor = document.getElementById(id);
         if (anchor) {
           document.body.scrollTop = anchor.offsetTop - this.fixedArtifactsTop;
           this.state = PageAnimation.FADE_IN_ANIMATION_INIT_STATE;
           this.changeDetector.detectChanges();
+          this.analyticsService.navigateTo(id);
         }
       }
       else document.body.scrollTop = 0;

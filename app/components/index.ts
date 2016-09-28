@@ -1,4 +1,5 @@
 export * from "./about.component";
+export * from "./analytics.component";
 export * from "./career-highlight.component";
 export * from "./carousel.component";
 export * from "./footer.component";

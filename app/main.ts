@@ -1,6 +1,8 @@
 import {Component} from "@angular/core";
 import {bootstrap} from '@angular/platform-browser-dynamic';
+import {Location} from "@angular/common";
 import {ROUTER_DIRECTIVES} from "@angular/router";
+
 
 import {rcRouterProviders} from './routes';
 import {StyleConfig} from "./style.config";
@@ -12,10 +14,11 @@ import {
   WelcomeComponent,
   AboutComponent,
   LinksComponent,
-  NotFoundComponent
+  NotFoundComponent,
 } from "./components";
 
 import {PlaceChangeEvent} from "./event/place-change.event";
+import {AnalyticsService} from "./services/analytics.service";
 
 @Component({
   selector: 'rc-main',
@@ -26,9 +29,19 @@ import {PlaceChangeEvent} from "./event/place-change.event";
       <rc-footer></rc-footer>
     </div>
   `,
-  providers: [StyleConfig, PlaceChangeEvent],
-  directives: [ NavbarComponent, FooterComponent,  ROUTER_DIRECTIVES],
-  precompile: [ PageComponent, WelcomeComponent, AboutComponent, LinksComponent, NotFoundComponent ]
+  providers: [Location, AnalyticsService, StyleConfig, PlaceChangeEvent],
+  directives: [
+    NavbarComponent,
+    FooterComponent,
+    ROUTER_DIRECTIVES
+  ],
+  precompile: [
+    PageComponent,
+    WelcomeComponent,
+    AboutComponent,
+    LinksComponent,
+    NotFoundComponent
+  ]
 })
 export class MainComponent {
 }

@@ -1,9 +1,10 @@
 import {Component, ViewChild, ElementRef, Renderer} from "@angular/core";
-import {Router, Event, NavigationStart, ROUTER_DIRECTIVES} from "@angular/router";
+import {Router, Event, NavigationStart, ROUTER_DIRECTIVES, NavigationEnd, NavigationCancel} from "@angular/router";
 
 import {LogoComponent} from "./logo.component";
 import {LinkForDirective} from "../directives";
 import {PlaceChangeEvent} from "../event/place-change.event";
+import {AnalyticsService} from "../services";
 
 const menuVisibleClassName = 'in';
 
@@ -28,9 +29,10 @@ export class NavbarComponent {
   @ViewChild('navbar') navbarElement: ElementRef;
   @ViewChild('menuToggle') menuToggleElement: ElementRef;
 
-  constructor(router: Router,
+  constructor(private router: Router,
               private renderer: Renderer,
-              private placeChangeEvent: PlaceChangeEvent) {
+              private placeChangeEvent: PlaceChangeEvent,
+              private analyticsService: AnalyticsService) {
     router.events.subscribe((e) => this.handleRouteChange(e));
     placeChangeEvent.subscribe((places) => this.handlePlaceEvent(places))
   }

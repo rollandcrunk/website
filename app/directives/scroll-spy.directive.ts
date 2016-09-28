@@ -1,5 +1,7 @@
 import {Directive, HostListener, ElementRef, Input, AfterViewInit} from "@angular/core";
 
+import {Location} from "@angular/common";
+
 import {PlaceChangeEvent} from "../event/place-change.event";
 import {StyleConfig} from "../style.config";
 
@@ -13,12 +15,14 @@ class Place {
 export class ScrollSpy implements AfterViewInit {
   private scrollSlop = 10;
   private fixedArtifactsTop = 0;
+  private lastLocation = '';
   private places: Place[] = [];
 
   @Input('rc-scroll-spy') selector: string;
 
   constructor(styleConfig: StyleConfig,
               private elementRef: ElementRef,
+              private location: Location,
               private placeChangeEvent: PlaceChangeEvent) {
     this.fixedArtifactsTop = styleConfig.fixedArtifactsTop;
   }
@@ -29,10 +33,24 @@ export class ScrollSpy implements AfterViewInit {
 
   @HostListener('window:scroll', [])
   onScroll() {
-    let places = this.pseudoPlaces().concat(this.findAll().map((place) => place.id));
-    if (places)
+    let placeIds = this.findAll().map((place) => place.id);
+    let places = this.pseudoPlaces().concat(placeIds);
+    if (places) {
       this.placeChangeEvent.emit(places);
+    }
+    if (placeIds) this.setLocation(placeIds);
   }
+
+  private setLocation = (places: string[]): string => {
+    let unique = places.filter((value: string, index: number, self: string[]) => self.indexOf(value) >= 0);
+    let location = '/' + unique.join('/');
+    if (location && location != this.lastLocation) {
+      console.debug('setLocation(' + places + ') => ' + location);
+      this.lastLocation = location;
+      this.location.replaceState(this.lastLocation);
+    }
+    return location;
+  };
 
   private catalog = (className: string) => {
     let places: HTMLElement[] = this.elementRef.nativeElement.getElementsByClassName(className);
@@ -57,18 +75,18 @@ export class ScrollSpy implements AfterViewInit {
     return place.top < top && place.bottom > top;
   };
 
-  // @nb: potential duplicate at end of scroll
   private findAll = (): Place[] => {
     let result: Place[] = [];
 
     let places = this.places;
     for (let i in places)
-      if (this.locationPredicate(places[i])) result.push(places[i]);
+      if (this.locationPredicate(places[i])) this.addUnique(places[i], result);
 
     // if scrolled to end, include the last place
     if ((document.body.scrollHeight - window.innerHeight) == window.pageYOffset) {
-      // @nb: may be adding it twice here; considered benign.
-      if (places.length) result.push(places[places.length - 1]);
+      if (places.length) {
+        this.addUnique(places[places.length - 1], result);
+      }
     }
     return result;
   };
@@ -81,5 +99,9 @@ export class ScrollSpy implements AfterViewInit {
     if (top > this.fixedArtifactsTop / 2) result.push(this.placeChangeEvent.UNDER_EVENT);
 
     return result;
+  }
+
+  private addUnique = (place: Place, places: Place[]) => {
+    if (places.indexOf(place) < 0) places.push(place);
   }
 }

@@ -1,3 +1,4 @@
+export * from "./analytics.service";
 export * from "./experience.service";
 export * from "./memoir.service";
 export * from "./observation.service";
