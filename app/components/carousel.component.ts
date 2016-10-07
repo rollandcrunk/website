@@ -5,8 +5,7 @@ import {PageAnimation} from "./shared/page.animation";
 import {
   SafeHtml,
   SafeResourceUrl,
-  DomSanitizationService,
-  BROWSER_SANITIZATION_PROVIDERS
+  DomSanitizer,
 } from "@angular/platform-browser";
 
 export type MediaType = 'image' | 'iframe';
@@ -24,7 +23,6 @@ export interface CarouselMedia {
   templateUrl: 'app/components/html/carousel.component.html',
   encapsulation: ViewEncapsulation.None,
   animations: PageAnimation.MEDIA_CHANGE_ANIMATION,
-  providers: [DomSanitizationService, BROWSER_SANITIZATION_PROVIDERS]
 })
 export class CarouselComponent {
   private static instance = 0;
@@ -34,7 +32,7 @@ export class CarouselComponent {
 
   @Input('media') media: CarouselMedia[] = [];
 
-  constructor(private sanitizer: DomSanitizationService,
+  constructor(private sanitizer: DomSanitizer,
               private changeDetector: ChangeDetectorRef) {}
 
   trustHtml = (resource: string): SafeHtml => {

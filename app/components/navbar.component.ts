@@ -1,10 +1,7 @@
 import {Component, ViewChild, ElementRef, Renderer} from "@angular/core";
-import {Router, Event, NavigationStart, ROUTER_DIRECTIVES, NavigationEnd, NavigationCancel} from "@angular/router";
+import {Router, Event, NavigationStart} from "@angular/router";
 
-import {LogoComponent} from "./logo.component";
-import {LinkForDirective} from "../directives";
 import {PlaceChangeEvent} from "../event/place-change.event";
-import {AnalyticsService} from "../services";
 
 const menuVisibleClassName = 'in';
 
@@ -23,7 +20,6 @@ const underClassName = 'under';
         box-shadow: 0 4px 2px 0 rgba(73,39,74,0.33);
       }
   `],
-  directives: [LogoComponent, LinkForDirective, ROUTER_DIRECTIVES]
 })
 export class NavbarComponent {
   @ViewChild('navbar') navbarElement: ElementRef;
@@ -31,8 +27,7 @@ export class NavbarComponent {
 
   constructor(private router: Router,
               private renderer: Renderer,
-              private placeChangeEvent: PlaceChangeEvent,
-              private analyticsService: AnalyticsService) {
+              private placeChangeEvent: PlaceChangeEvent) {
     router.events.subscribe((e) => this.handleRouteChange(e));
     placeChangeEvent.subscribe((places) => this.handlePlaceEvent(places))
   }

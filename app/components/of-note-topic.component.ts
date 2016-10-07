@@ -1,14 +1,13 @@
 import {ViewEncapsulation, Component, Renderer} from "@angular/core";
 
 import {MemoirService} from "../services";
-import {CarouselMedia, CarouselComponent} from "./carousel.component";
+import {CarouselMedia} from "./carousel.component";
 
 const expandedClassName = 'rc-expanded';
 
 @Component({
   selector: 'rc-of-note-topic',
   templateUrl: 'app/components/html/of-note-topic.component.html',
-  directives: [OfNoteTopicComponent, CarouselComponent],
   encapsulation: ViewEncapsulation.None,
 })
 export class OfNoteTopicComponent {

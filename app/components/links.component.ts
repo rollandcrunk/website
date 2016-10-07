@@ -4,7 +4,7 @@ import {PageAnimation} from "./shared/page.animation";
 @Component({
   selector: 'rc-links',
   template: `
-    <div id="links" class="place container" @pageState="state">
+    <div id="links" class="place container" [@pageState]="state">
       <div class="page-header m-t-1">
         <h2>Links</h2>
       </div>

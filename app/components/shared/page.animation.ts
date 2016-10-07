@@ -1,4 +1,4 @@
-import {style, trigger, state, transition, animate} from "@angular/core";
+import {style, trigger, state, transition, animate, keyframes} from "@angular/core";
 
 const createdState = 'created';
 const readyState = 'ready';
@@ -14,8 +14,13 @@ export class PageAnimation {
   public static FADE_IN_ANIMATION = [
     trigger('pageState', [
       state(createdState, style({opacity: .25, transform: 'scale(.97)'})),
-      state(readyState, style({opacity: 1, transform: 'scale(1)'})),
-      transition('* <=> *', animate('256ms ease-in'))
+      transition('created <=> ready', [
+        animate(256, keyframes([
+          style({opacity: .25, transform: 'scale(.97)', offset: 0}),
+          style({opacity: .25, transform: 'scale(1)', offset: 0.5}),
+          style({opacity: 1, transform: 'scale(1)', offset: 1.0}),
+        ]))
+      ])
     ])
   ];
   public static FADE_IN_ANIMATION_INIT_STATE = createdState;

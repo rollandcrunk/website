@@ -1,27 +1,21 @@
+import {ActivatedRoute} from "@angular/router";
+
 import {
   Component,
   ChangeDetectorRef,
-  OnInit,
   AfterViewInit,
   ViewEncapsulation,
   ChangeDetectionStrategy
 } from "@angular/core";
 
-import {ActivatedRoute} from "@angular/router";
-
 import {PageAnimation} from "./shared/page.animation";
-import {WelcomeComponent} from "./welcome.component";
-import {AboutComponent} from "./about.component";
-import {LinksComponent} from "./links.component";
 import {AnalyticsService, MemoirService, TooltipService} from "../services";
-import {ScrollSpy} from "../directives/scroll-spy.directive";
 import {StyleConfig} from "../style.config";
-
 
 @Component({
   selector: 'rc-page',
   template: `
-    <div rc-scroll-spy="place">
+    <div rc-scroll-spy="place" [@pageState]="state">
       <rc-welcome></rc-welcome>
       <rc-about></rc-about>
       <rc-links></rc-links>
@@ -30,10 +24,9 @@ import {StyleConfig} from "../style.config";
   encapsulation: ViewEncapsulation.None,
   animations: PageAnimation.FADE_IN_ANIMATION,
   providers: [MemoirService, TooltipService],
-  directives: [ScrollSpy, WelcomeComponent, AboutComponent, LinksComponent],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class PageComponent implements OnInit, AfterViewInit {
+export class PageComponent implements AfterViewInit {
   private state: string = PageAnimation.FADE_IN_ANIMATION_INIT_STATE;
 
   private fixedArtifactsTop = 0;
@@ -44,9 +37,6 @@ export class PageComponent implements OnInit, AfterViewInit {
               private analyticsService: AnalyticsService,
               private tooltipService: TooltipService) {
     this.fixedArtifactsTop = styleConfig.fixedArtifactsTop;
-  }
-
-  ngOnInit(): any {
   }
 
   // @fixme - better technique for dom access and manipulation.
@@ -66,8 +56,10 @@ export class PageComponent implements OnInit, AfterViewInit {
       }
       else document.body.scrollTop = 0;
 
-      this.state = PageAnimation.FADE_IN_ANIMATION_FINAL_STATE;
-      this.changeDetector.detectChanges();
+      //setTimeout(() => {
+        this.state = PageAnimation.FADE_IN_ANIMATION_FINAL_STATE;
+      //}, 50);
+        //this.changeDetector.detectChanges();
     });
   }
 }

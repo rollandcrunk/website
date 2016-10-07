@@ -1,10 +1,6 @@
 import {ViewEncapsulation, Component} from "@angular/core";
 
 import {ExperienceService, Juncture} from "../services";
-import {TimelineComponent} from "./timeline.component";
-import {TimelineEventComponent} from "./timeline-event.component";
-import {CareerHighlightComponent} from "./career-highlight.component";
-import {TrustedContentComponent} from "./trusted-content.component";
 
 @Component({
   selector: 'rc-work-topic',
@@ -44,7 +40,6 @@ import {TrustedContentComponent} from "./trusted-content.component";
   `],
   encapsulation: ViewEncapsulation.None,
   providers: [ExperienceService],
-  directives: [TimelineComponent, TimelineEventComponent, CareerHighlightComponent, TrustedContentComponent]
 })
 export class WorkTopicComponent {
   constructor(private experienceService: ExperienceService) {}

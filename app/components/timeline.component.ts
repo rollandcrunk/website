@@ -1,8 +1,5 @@
 import {ViewEncapsulation, Component, Input} from "@angular/core";
 
-import {TimelineEventComponent} from "./timeline-event.component";
-import {CareerHighlightComponent} from "./career-highlight.component";
-
 @Component({
   selector: 'rc-timeline',
   template: `
@@ -16,7 +13,6 @@ import {CareerHighlightComponent} from "./career-highlight.component";
     </div>
   `,
   encapsulation: ViewEncapsulation.None,
-  directives: [TimelineEventComponent, CareerHighlightComponent]
 })
 export class TimelineComponent {
   @Input() subject: string;

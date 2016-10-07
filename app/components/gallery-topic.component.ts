@@ -1,7 +1,7 @@
 import {ViewEncapsulation, Component} from "@angular/core";
 
 import {MemoirService} from "../services";
-import {CarouselMedia, CarouselComponent} from "./carousel.component";
+import {CarouselMedia} from "./carousel.component";
 
 @Component({
   selector: 'rc-gallery-topic',
@@ -14,7 +14,6 @@ import {CarouselMedia, CarouselComponent} from "./carousel.component";
       <p><rc-carousel [media]="memoir('gallery')"></rc-carousel></p>
   </div>
   `,
-  directives: [CarouselComponent],
   encapsulation: ViewEncapsulation.None,
 })
 export class GalleryTopicComponent {
