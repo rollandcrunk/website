@@ -108,7 +108,7 @@ export class ScrollSpy implements AfterViewInit {
     if (places.indexOf(place) < 0) places.push(place);
   };
 
-  private validLocation = (location: String): boolean => {
+  private validLocation = (location: string): boolean => {
     return location && ScrollSpy.IMPOSSIBLE_PATHS.indexOf(location) < 0;
   }
 }
