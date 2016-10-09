@@ -13,6 +13,9 @@ class Place {
 
 @Directive({ selector: '[rc-scroll-spy]' })
 export class ScrollSpy implements AfterViewInit {
+  // some paths that might be constructed that are impossible.
+  private static IMPOSSIBLE_PATHS = [ '/gallery/links', '/home/about', '/about/links', '/about/gallery/links' ];
+
   private scrollSlop = 10;
   private fixedArtifactsTop = 0;
   private lastLocation = '';
@@ -44,7 +47,7 @@ export class ScrollSpy implements AfterViewInit {
   private setLocation = (places: string[]): string => {
     let unique = places.filter((value: string, index: number, self: string[]) => self.indexOf(value) >= 0);
     let location = '/' + unique.join('/');
-    if (location && location != this.lastLocation) {
+    if (this.validLocation(location) && location != this.lastLocation) {
       console.debug('setLocation(' + places + ') => ' + location);
       this.lastLocation = location;
       this.location.replaceState(this.lastLocation);
@@ -103,5 +106,9 @@ export class ScrollSpy implements AfterViewInit {
 
   private addUnique = (place: Place, places: Place[]) => {
     if (places.indexOf(place) < 0) places.push(place);
+  };
+
+  private validLocation = (location: String): boolean => {
+    return location && ScrollSpy.IMPOSSIBLE_PATHS.indexOf(location) < 0;
   }
 }
