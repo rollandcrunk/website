@@ -42,7 +42,7 @@ const mcRoute: CarouselMedia = {
     <p>
     South as far as I could go before taking a right turn and heading west. The long way. 
     <p>
-    Why? Departed Connecticut the 1st week of December and it was pretty chilly; there would be too much 
+    Why? I departed Connecticut the 1st week of December and it was pretty chilly; there would be too much 
     snow (any at all) if I headed due west. As it was, it took 5 days to reach
     western Louisiana, mainly by drafting the fastest semi heading in the same direction. 
     The truckers were pretty cool about me hanging a couple yards from their bumper coming out of the 
@@ -146,8 +146,8 @@ const searsPointLap: CarouselMedia =  {
       Click here
     </a>
     or the play button to take a lap around Sonoma Raceway. 
-    This was taken several years after I raced and is the 600cc production class, but except for course differences 
-    after turn 8a
+    This was taken several years after I raced (I am not in this race) and is the 600cc production class, but except 
+    for course differences after turn 8a
     <span style="word-wrap: break-word">
     (<a href="https://en.wikipedia.org/wiki/Sonoma_Raceway#/media/File:Infineon_(Sears_Point)_with_emphasis_on_Moto-IRL_track.svg" target="_blank">
       video
@@ -259,17 +259,17 @@ const usgp: CarouselMedia = {
 };
 
 const dhrolin: CarouselMedia = {
-  src: 'img/dhrolin-85.jpg', media: 'image', title: 'Dhrolin - level 100+ Human Rogue',
+  src: 'img/dhrolin-85.jpg', media: 'image', title: 'Dhrolin - level 110 Human Rogue',
   description: `
-    I've been known to play a tad bit of 
+    I play a bit of
     <a href="https://worldofwarcraft.com" target="_blank">World of Warcraft</a> on occasion. 
     <a href="http://us.battle.net/wow/en/character/alexstrasza/Dhrolin/simple" target="_blank">Dhrolin</a> 
     is my main; the first toon
     I rolled and the beneficiary of the lions share of my attention; the best gear; the most
-    achievements. I have a few other level 100+ toons, in both the
+    achievements. I have a few other level 100+ toons (14+), in both the
     <a href="http://wowwiki.wikia.com/wiki/Alliance" target="_blank">Alliance</a> and
     <a href="http://wowwiki.wikia.com/wiki/Horde" target="_blank">Horde</a> factions,
-    but none that I have anywhere near the same level of muscle memory as I do with Dhrolin.
+    but playing any of these I've never achieved the same level of muscle memory as I do playing as Dhrolin.
   `
 };
 
