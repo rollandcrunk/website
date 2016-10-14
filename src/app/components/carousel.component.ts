@@ -20,7 +20,7 @@ export interface CarouselMedia {
 
 @Component({
   selector: 'rc-carousel',
-  templateUrl: 'app/components/html/carousel.component.html',
+  templateUrl: './html/carousel.component.html',
   encapsulation: ViewEncapsulation.None,
   animations: PageAnimation.MEDIA_CHANGE_ANIMATION,
 })

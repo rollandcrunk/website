@@ -10,7 +10,7 @@ const underClassName = 'under';
 
 @Component({
   selector: 'rc-navbar',
-  templateUrl: 'app/components/html/navbar.component.html',
+  templateUrl: './html/navbar.component.html',
   styles: [`
     .navbar.scroll {
       box-shadow: 0 2px 2px 0 rgba(73,39,74,0.66);

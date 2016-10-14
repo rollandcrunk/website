@@ -89,15 +89,37 @@ bh_unicode_properties.cache
 GitHub.sublime-settings
 
 node_modules/
-js/*.js
-css/*.css
+bower_components/
+
+src/assets/js/*.js
+src/assets/css/*.css
 *.swp
 .DS_Store
 Thumbs.db
 .idea/
-css/
-js/
+src/assets/css/
+src/assets/js/
 typings/
 app/**/*.js
 app/**/*.js.map
 stash/
+
+
+# compiled output
+dist
+tmp
+
+# misc
+.sass-cache
+connect.lock
+coverage/*
+libpeerconnection.log
+npm-debug.log
+testem.log
+/typings
+
+
+# e2e
+/e2e/*.js
+/e2e/*.map
+

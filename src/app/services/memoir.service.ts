@@ -3,7 +3,7 @@ import {CarouselMedia} from "../components/carousel.component";
 import {SEARS_POINT_LAP} from "../components/shared/iframe.source";
 
 const dickyB: CarouselMedia = {
-  src: 'img/uss-rb-russell.jpg', media: 'image', title: 'USS R.B. Russell; SSN 687',
+  src: 'assets/img/uss-rb-russell.jpg', media: 'image', title: 'USS R.B. Russell; SSN 687',
   description: `
     <p>
       The <em>Dicky B.</em> A nuclear fast attack submarine home ported at New London Connecticut.
@@ -24,7 +24,7 @@ const dickyB: CarouselMedia = {
 };
 
 const mcRide: CarouselMedia = {
-  src: 'img/cb750f.jpg', media: 'image', title: 'The Ride',
+  src: 'assets/img/cb750f.jpg', media: 'image', title: 'The Ride',
   description: `
     1979 Honda CB-750f. I added highway pegs and replaced the handlebars with higher ones, thinking that
     if I could lean back a little, it would be more comfortable over distance. As it turned out, the 
@@ -37,7 +37,7 @@ const mcRide: CarouselMedia = {
 };
 
 const mcRoute: CarouselMedia = {
-  src: 'img/route.jpg', media: 'image', title: 'The Route',
+  src: 'assets/img/route.jpg', media: 'image', title: 'The Route',
   description: `
     <p>
     South as far as I could go before taking a right turn and heading west. The long way. 
@@ -54,7 +54,7 @@ const mcRoute: CarouselMedia = {
 };
 
 const ibmEastwood: CarouselMedia = {
-  src: 'img/ibm-eastwood.jpg', media: 'image', title: 'Simtería Philippines',
+  src: 'assets/img/ibm-eastwood.jpg', media: 'image', title: 'Simtería Philippines',
   description: `
     <p>
     Company was located on the twelve floor of the IBM building in the 
@@ -73,10 +73,10 @@ const ibmEastwood: CarouselMedia = {
 };
 
 const outsideOffice: CarouselMedia = {
-  src: 'img/outside-office.jpg', media: 'image', title: '<abbr rel="tooltip" data-title="The office">Ang opisina</abbr>',
+  src: 'assets/img/outside-office.jpg', media: 'image', title: '<abbr rel="tooltip" data-title="The office">Ang opisina</abbr>',
   description: `
     <p>
-    <img src="img/simteria_ph-logo.jpg" alt="Simtería Philippines logo" class="pull-xs-right" style="border-radius: 6px;">
+    <img src="assets/img/simteria_ph-logo.jpg" alt="Simtería Philippines logo" class="pull-xs-right" style="border-radius: 6px;">
     Simtería Philippines was created to provide high-level expertise and 
     contract-programming services focusing on internet and web based technologies. Leveraging
     Java enterprise and relational database technologies to offer full-stack web application
@@ -89,7 +89,7 @@ const outsideOffice: CarouselMedia = {
 };
 
 const insideOffice: CarouselMedia = {
-  src: 'img/inside-office.jpg', media: 'image', title: 'Ready to go',
+  src: 'assets/img/inside-office.jpg', media: 'image', title: 'Ready to go',
   description: `
     <p>
     Workstations installed; blinds on their way.
@@ -102,7 +102,7 @@ const insideOffice: CarouselMedia = {
 };
 
 const officeWindow: CarouselMedia = {
-  src: 'img/office-window.jpg', media: 'image', title: 'Location, location, location',
+  src: 'assets/img/office-window.jpg', media: 'image', title: 'Location, location, location',
   description: `
     <p>
     Looking out my office window in 
@@ -116,7 +116,7 @@ const officeWindow: CarouselMedia = {
 
 
 const greenMeadows: CarouselMedia = {
-  src: 'img/green-meadows.jpg', media: 'image', title: 'Home',
+  src: 'assets/img/green-meadows.jpg', media: 'image', title: 'Home',
   description: `
     Green Meadows. Not far from work, I walked to and fro most days if the weather wasn't inclimate (and a couple of 
     times when it was).
@@ -125,7 +125,7 @@ const greenMeadows: CarouselMedia = {
 
 
 const racer: CarouselMedia = {
-  src: 'img/racer.jpg', media: 'image', title: '#629',
+  src: 'assets/img/racer.jpg', media: 'image', title: '#629',
   description: `
     <p>
     At Sears Point (now known as 
@@ -161,7 +161,7 @@ const searsPointLap: CarouselMedia =  {
 };
 
 const states: CarouselMedia = {
-  src: 'img/states.jpg', media: 'image', title: 'US States',
+  src: 'assets/img/states.jpg', media: 'image', title: 'US States',
   description: `
     <p>
     Most were drive throughs, with a few business trips sprinkled in. In alphabetical order:
@@ -180,7 +180,7 @@ const states: CarouselMedia = {
 };
 
 const countries: CarouselMedia = {
-  src: 'img/countries.jpg', media: 'image', title: 'Countries',
+  src: 'assets/img/countries.jpg', media: 'image', title: 'Countries',
   description: `
     <p>
     Not as extensively travelled internationally. If Canada weren't so big,
@@ -194,14 +194,14 @@ const countries: CarouselMedia = {
 };
 
 const nyeManila: CarouselMedia = {
-  src: 'img/nye-manila-trance.jpg', media: 'image', title: 'New Years Eve, Makati Philippines',
+  src: 'assets/img/nye-manila-trance.jpg', media: 'image', title: 'New Years Eve, Makati Philippines',
   description: `
       To find a party, all one needs to do is step outdoors.
   `
 };
 
 const glorietta: CarouselMedia = {
-  src: 'img/glorietta.jpg', media: 'image', title: 'Jeepneys',
+  src: 'assets/img/glorietta.jpg', media: 'image', title: 'Jeepneys',
   description: `
     The primary mode of transportation. Here is a line of
     <a href="https://en.wikipedia.org/wiki/Jeepney" target="_blank">jeepneys</a> 
@@ -211,7 +211,7 @@ const glorietta: CarouselMedia = {
 };
 
 const highRise: CarouselMedia = {
-  src: 'img/makati-highrise.jpg', media: 'image', title: 'On the move',
+  src: 'assets/img/makati-highrise.jpg', media: 'image', title: 'On the move',
   description: `
     I saw several high rises being built while living in Metro Manila (and
     some finished). The growth is impressive; traffic, well, that's another
@@ -220,14 +220,14 @@ const highRise: CarouselMedia = {
 };
 
 const atPlay: CarouselMedia = {
-  src: 'img/at-play.jpg', media: 'image', title: 'At the beach',
+  src: 'assets/img/at-play.jpg', media: 'image', title: 'At the beach',
   description: `
     Kids just doing their job: playing and having fun.
   `
 };
 
 const hogsTied: CarouselMedia = {
-  src: 'img/pigs-in-blanket.jpg', media: 'image', title: 'Think you\'re having a bad day?',
+  src: 'assets/img/pigs-in-blanket.jpg', media: 'image', title: 'Think you\'re having a bad day?',
   description: `
     Could be. I certainly hope not. Anyway, what these piglets have to look forward to is either another day of
     this, or being the main ingredient for <a href="https://en.wikipedia.org/wiki/Lechon" target="_blank">Lechon</a>.
@@ -235,7 +235,7 @@ const hogsTied: CarouselMedia = {
 };
 
 const davaoBoat: CarouselMedia = {
-  src: 'img/davao-boat.jpg', media: 'image', title: 'Outrigger',
+  src: 'assets/img/davao-boat.jpg', media: 'image', title: 'Outrigger',
   description: `
     With over 7,700 islands in the Philippines, boats like this are indispensable in transporting people and
     supplies between population centers and other&mdash;often remote&mdash;islands. 
@@ -244,7 +244,7 @@ const davaoBoat: CarouselMedia = {
 
 
 const usgp: CarouselMedia = {
-  src: 'img/usgp.jpg', media: 'image',
+  src: 'assets/img/usgp.jpg', media: 'image',
   title: '<abbr rel="tooltip" data-title="US Gran Prix">USGP</abbr>, Laguna Seca, California',
   description: `
       The very best in the world competing in the MotoGP at Laguna. 
@@ -259,7 +259,7 @@ const usgp: CarouselMedia = {
 };
 
 const dhrolin: CarouselMedia = {
-  src: 'img/dhrolin-85.jpg', media: 'image', title: 'Dhrolin - level 110 Human Rogue',
+  src: 'assets/img/dhrolin-85.jpg', media: 'image', title: 'Dhrolin - level 110 Human Rogue',
   description: `
     I play a bit of
     <a href="https://worldofwarcraft.com" target="_blank">World of Warcraft</a> on occasion. 

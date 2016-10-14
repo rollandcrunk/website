@@ -7,7 +7,7 @@ const expandedClassName = 'rc-expanded';
 
 @Component({
   selector: 'rc-of-note-topic',
-  templateUrl: 'app/components/html/of-note-topic.component.html',
+  templateUrl: './html/of-note-topic.component.html',
   encapsulation: ViewEncapsulation.None,
 })
 export class OfNoteTopicComponent {

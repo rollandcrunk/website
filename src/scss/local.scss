@@ -1,6 +1,6 @@
-@import "bootstrap/_variables.scss";
-@import "bootstrap/mixins/_size.scss";
-@import "timeline.scss";
+@import "bootstrap/variables";
+@import "bootstrap/mixins/size";
+@import "timeline";
 
 html {
   position: relative;

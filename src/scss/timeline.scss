@@ -1,5 +1,5 @@
-@import "mixins/_vendor.scss";
-@import "bootstrap/_variables.scss";
+@import "mixins/vendor";
+@import "bootstrap/variables";
 
 $timeline-color:          rgba(148, 97, 142, .25);
 $timeline-badge-size:     50px;
