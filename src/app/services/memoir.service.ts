@@ -139,6 +139,7 @@ const racer: CarouselMedia = {
   `
 };
 
+// tslint:disable:max-line-length
 const searsPointLap: CarouselMedia =  {
   src: SEARS_POINT_LAP, media: 'iframe', title: 'Sears Point Lap',
   description: `
@@ -159,6 +160,7 @@ const searsPointLap: CarouselMedia =  {
     it is pretty close to how I remember it.
   `
 };
+// tslint:enable:max-line-length
 
 const states: CarouselMedia = {
   src: 'assets/img/states.jpg', media: 'image', title: 'US States',

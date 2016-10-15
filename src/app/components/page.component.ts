@@ -15,7 +15,7 @@ import { StyleConfig } from '../style.config';
 @Component({
   selector: 'rc-page',
   template: `
-    <div rc-scroll-spy="place" [@pageState]="state">
+    <div rcScrollSpy="place" [@pageState]="state">
       <rc-welcome></rc-welcome>
       <rc-about></rc-about>
       <rc-links></rc-links>

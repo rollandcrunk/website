@@ -16,12 +16,12 @@
       <div class="collapse navbar-toggleable-xs" id="collapsingNavbar" #menuToggle>
         <ul class="nav navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/home']" routerLinkActive="active" rc-link-for="home">
+            <a class="nav-link" [routerLink]="['/home']" routerLinkActive="active" rcLinkFor="home">
               Home<span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link" [routerLink]="['/about']" routerLinkActive="active" rc-link-for="about">About</a>
+            <a class="nav-link" [routerLink]="['/about']" routerLinkActive="active" rcLinkFor="about">About</a>
             <a class="dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
               <div class="rc-subnav-button">
                 <span class="fa fa-caret-down"></span>
@@ -30,16 +30,16 @@
             <ul class="dropdown-menu">
               <li class="dropdown-header">About topics...</li>
               <li role="separator" class="divider"></li>
-              <li><a class="dropdown-item" [routerLink]="['/about/of-note']" rc-link-for="of-note">Of note</a></li>
-              <li><a class="dropdown-item" [routerLink]="['/about/work']" rc-link-for="work">Work</a></li>
-              <li><a class="dropdown-item" [routerLink]="['/about/opinion']" rc-link-for="opinion">Opinion</a></li>
-              <li><a class="dropdown-item" [routerLink]="['/about/gallery']" rc-link-for="gallery">Gallery</a></li>
+              <li><a class="dropdown-item" [routerLink]="['/about/of-note']" rcLinkFor="of-note">Of note</a></li>
+              <li><a class="dropdown-item" [routerLink]="['/about/work']" rcLinkFor="work">Work</a></li>
+              <li><a class="dropdown-item" [routerLink]="['/about/opinion']" rcLinkFor="opinion">Opinion</a></li>
+              <li><a class="dropdown-item" [routerLink]="['/about/gallery']" rcLinkFor="gallery">Gallery</a></li>
               <li role="separator" class="divider"></li>
               <li><a>Credits</a></li>
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/links']" routerLinkActive="active" rc-link-for="links">Links</a>
+            <a class="nav-link" [routerLink]="['/links']" routerLinkActive="active" rcLinkFor="links">Links</a>
           </li>
         </ul>
       </div>

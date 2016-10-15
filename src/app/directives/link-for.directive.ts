@@ -1,9 +1,9 @@
 import { Directive, Input, ElementRef, Renderer } from '@angular/core';
 import { PlaceChangeEvent } from '../event/place-change.event';
 
-@Directive({selector: '[rc-link-for]'})
+@Directive({selector: '[rcLinkFor]'})
 export class LinkForDirective {
-  @Input('rc-link-for') linkFor: string;
+  @Input() rcLinkFor: string;
 
   constructor(placeChangeEvent: PlaceChangeEvent,
               private elementRef: ElementRef,
@@ -12,6 +12,6 @@ export class LinkForDirective {
   }
 
   private refresh = (items: string[]): void => {
-    this.renderer.setElementClass(this.elementRef.nativeElement, 'active', items.indexOf(this.linkFor) >= 0);
+    this.renderer.setElementClass(this.elementRef.nativeElement, 'active', items.indexOf(this.rcLinkFor) >= 0);
   }
 }

@@ -11,7 +11,7 @@ class Place {
   bottom: number;
 }
 
-@Directive({ selector: '[rc-scroll-spy]' })
+@Directive({ selector: '[rcScrollSpy]' })
 export class ScrollSpyDirective implements AfterViewInit {
   // some paths that might be constructed that are impossible.
   private static IMPOSSIBLE_PATHS = [ '/gallery/links', '/home/about', '/about/links', '/about/gallery/links' ];
@@ -21,7 +21,7 @@ export class ScrollSpyDirective implements AfterViewInit {
   private lastLocation = '';
   private places: Place[] = [];
 
-  @Input('rc-scroll-spy') selector: string;
+  @Input() rcScrollSpy: string;
 
   constructor(styleConfig: StyleConfig,
               private elementRef: ElementRef,
@@ -31,7 +31,7 @@ export class ScrollSpyDirective implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.catalog(this.selector);
+    this.catalog(this.rcScrollSpy);
   }
 
   @HostListener('window:scroll', [])
@@ -72,7 +72,7 @@ export class ScrollSpyDirective implements AfterViewInit {
     };
   };
 
-  private locationPredicate= (place: Place) => {
+  private locationPredicate = (place: Place) => {
     let top = document.body.scrollTop;
     return place.top < top && place.bottom > top;
   };

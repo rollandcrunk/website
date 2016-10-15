@@ -4,7 +4,7 @@
          data-keyboard="true" data-interval="0">
       <div class="carousel-inner" role="listbox">
         <div *ngFor="let item of media; let i = index;" class="carousel-item"
-             [class.active]="isActive(i, item)" [@mediaState]="state">
+             [class.active]="isActive(i)" [@mediaState]="state">
           <img *ngIf="item.media == 'image'" src="{{item.src}}" alt="{{item.title}}" data-holder-rendered="true">
           <div *ngIf="item.media == 'iframe'" class="rc-video-clip">
             <iframe  [src]="trustResource(item.src)" name="{{item.title}}"

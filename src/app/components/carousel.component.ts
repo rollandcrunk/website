@@ -26,7 +26,11 @@ export interface CarouselMedia {
 })
 export class CarouselComponent {
   private static instance = 0;
+
+  /* Used in template to issue unique carousel identifiers. */
+  // tslint:disable-next-line:no-unused-variable
   private carouselId = 'rc-carousel-id' + CarouselComponent.instance++;
+
   private activeIndex = 0;
   private state: string = 'none';
 
@@ -43,7 +47,7 @@ export class CarouselComponent {
     return this.sanitizer.bypassSecurityTrustResourceUrl(resource);
   };
 
-  isActive = (index: number, media: CarouselMedia): boolean => {
+  isActive = (index: number): boolean => {
     return this.activeIndex === index;
   };
 
