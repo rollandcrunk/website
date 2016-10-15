@@ -9,7 +9,7 @@
     "url": "git://github.com/rollandcrunk/website"
   },
   "scripts": {
-    "start": "ng serve",
+    "start": "ng serve --port 3000",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",
     "pree2e": "webdriver-manager update",
