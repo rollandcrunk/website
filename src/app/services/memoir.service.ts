@@ -1,6 +1,6 @@
-import {Injectable} from "@angular/core";
-import {CarouselMedia} from "../components/carousel.component";
-import {SEARS_POINT_LAP} from "../components/shared/iframe.source";
+import { Injectable } from '@angular/core';
+import { CarouselMedia } from '../components/carousel.component';
+import { SEARS_POINT_LAP } from '../components/shared/iframe.source';
 
 const dickyB: CarouselMedia = {
   src: 'assets/img/uss-rb-russell.jpg', media: 'image', title: 'USS R.B. Russell; SSN 687',

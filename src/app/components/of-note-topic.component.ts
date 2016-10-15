@@ -1,7 +1,7 @@
-import {ViewEncapsulation, Component, Renderer} from "@angular/core";
+import { ViewEncapsulation, Component, Renderer } from '@angular/core';
 
-import {MemoirService} from "../services";
-import {CarouselMedia} from "./carousel.component";
+import { MemoirService } from '../services';
+import { CarouselMedia } from './carousel.component';
 
 const expandedClassName = 'rc-expanded';
 
@@ -28,7 +28,7 @@ export class OfNoteTopicComponent {
       if (oldNoteItem) {
         this.renderer.setElementClass(this.selectedNote, expandedClassName, false);
       }
-      if (noteItem != oldNoteItem) {
+      if (noteItem !== oldNoteItem) {
         this.scrollTo(noteItem);
         this.selectedNote = event.target;
         this.renderer.setElementClass(this.selectedNote, expandedClassName, true);

@@ -1,4 +1,4 @@
-import {ViewEncapsulation, Component, Input} from "@angular/core";
+import { ViewEncapsulation, Component, Input } from '@angular/core';
 
 @Component({
   selector: 'rc-timeline',

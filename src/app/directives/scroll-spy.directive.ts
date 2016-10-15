@@ -1,9 +1,9 @@
-import {Directive, HostListener, ElementRef, Input, AfterViewInit} from "@angular/core";
+import { Directive, HostListener, ElementRef, Input, AfterViewInit } from '@angular/core';
 
-import {Location} from "@angular/common";
+import { Location } from '@angular/common';
 
-import {PlaceChangeEvent} from "../event/place-change.event";
-import {StyleConfig} from "../style.config";
+import { PlaceChangeEvent } from '../event/place-change.event';
+import { StyleConfig } from '../style.config';
 
 class Place {
   id: string;
@@ -12,7 +12,7 @@ class Place {
 }
 
 @Directive({ selector: '[rc-scroll-spy]' })
-export class ScrollSpy implements AfterViewInit {
+export class ScrollSpyDirective implements AfterViewInit {
   // some paths that might be constructed that are impossible.
   private static IMPOSSIBLE_PATHS = [ '/gallery/links', '/home/about', '/about/links', '/about/gallery/links' ];
 
@@ -47,8 +47,7 @@ export class ScrollSpy implements AfterViewInit {
   private setLocation = (places: string[]): string => {
     let unique = places.filter((value: string, index: number, self: string[]) => self.indexOf(value) >= 0);
     let location = '/' + unique.join('/');
-    if (this.validLocation(location) && location != this.lastLocation) {
-      console.debug('setLocation(' + places + ') => ' + location);
+    if (this.validLocation(location) && location !== this.lastLocation) {
       this.lastLocation = location;
       this.location.replaceState(this.lastLocation);
     }
@@ -70,7 +69,7 @@ export class ScrollSpy implements AfterViewInit {
       id: element.id,
       top: element.offsetTop - this.fixedArtifactsTop * 2,
       bottom: element.offsetTop + element.clientHeight - this.fixedArtifactsTop * 2
-    }
+    };
   };
 
   private locationPredicate= (place: Place) => {
@@ -86,7 +85,7 @@ export class ScrollSpy implements AfterViewInit {
       if (this.locationPredicate(places[i])) this.addUnique(places[i], result);
 
     // if scrolled to end, include the last place
-    if ((document.body.scrollHeight - window.innerHeight) == window.pageYOffset) {
+    if ((document.body.scrollHeight - window.innerHeight) === window.pageYOffset) {
       if (places.length) {
         this.addUnique(places[places.length - 1], result);
       }
@@ -109,6 +108,6 @@ export class ScrollSpy implements AfterViewInit {
   };
 
   private validLocation = (location: string): boolean => {
-    return location && ScrollSpy.IMPOSSIBLE_PATHS.indexOf(location) < 0;
+    return location && ScrollSpyDirective.IMPOSSIBLE_PATHS.indexOf(location) < 0;
   }
 }

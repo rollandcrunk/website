@@ -1,5 +1,5 @@
-import {Component, ChangeDetectorRef, AfterViewInit} from "@angular/core";
-import {PageAnimation} from "./shared/page.animation";
+import { Component, ChangeDetectorRef, AfterViewInit } from '@angular/core';
+import { PageAnimation } from './shared/page.animation';
 
 @Component({
   selector: 'rc-links',
@@ -27,7 +27,7 @@ import {PageAnimation} from "./shared/page.animation";
         <ul>
           <li>
             <a href="https://www.google.com/about/careers/jobs" target="_blank">Google Careers</a>
-            A great place to work. The original site is still <a href="https://www.google.com/about/careers/search" target="_blank">here</a>.
+            Find a job at a pretty cool place to work.
           </li>
         </ul>
         <p>

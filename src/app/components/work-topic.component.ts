@@ -1,6 +1,6 @@
-import {ViewEncapsulation, Component} from "@angular/core";
+import { ViewEncapsulation, Component } from '@angular/core';
 
-import {ExperienceService, Juncture} from "../services";
+import { ExperienceService, Juncture } from '../services';
 
 @Component({
   selector: 'rc-work-topic',
@@ -49,7 +49,7 @@ export class WorkTopicComponent {
   }
 
   badge(index: number): string {
-    switch(index) {
+    switch (index) {
       case 0: return 'first';
       case 1: return 'second';
       case 2: return 'third';

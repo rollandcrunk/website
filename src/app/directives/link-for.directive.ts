@@ -1,5 +1,5 @@
-import {Directive, Input, ElementRef, Renderer} from "@angular/core";
-import {PlaceChangeEvent} from "../event/place-change.event";
+import { Directive, Input, ElementRef, Renderer } from '@angular/core';
+import { PlaceChangeEvent } from '../event/place-change.event';
 
 @Directive({selector: '[rc-link-for]'})
 export class LinkForDirective {

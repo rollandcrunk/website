@@ -1,4 +1,4 @@
-import {Injectable} from "@angular/core";
+import { Injectable } from '@angular/core';
 
 declare var rc_ga: any;   // google analytics
 
@@ -11,9 +11,8 @@ export class AnalyticsService {
   }
 
   public navigateTo(page: string) {
-    if (page != this.lastPage) {
+    if (page !== this.lastPage) {
       this.lastPage = page;
-      console.debug('navigateTo(' + page + ')');
       rc_ga('send', 'pageview', page);
     }
   }

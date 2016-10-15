@@ -1,13 +1,13 @@
-import {Injectable} from "@angular/core";
+import { Injectable } from '@angular/core';
 
 export class Juncture {
   constructor(public name: string,
               public caption: string,
               private categoryMap: Map<string, string[]>) {}
 
-  get categories(): string[] { return Array.from(this.categoryMap.keys()) }
+  get categories(): string[] { return Array.from(this.categoryMap.keys()); }
 
-  public category(key: string): string[] { return this.categoryMap.get(key) }
+  public category(key: string): string[] { return this.categoryMap.get(key); }
 }
 
 class Experience {

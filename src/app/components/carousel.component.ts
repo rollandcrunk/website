@@ -1,12 +1,12 @@
-import {Component, ViewEncapsulation, Input, ChangeDetectorRef} from "@angular/core";
+import { Component, ViewEncapsulation, Input, ChangeDetectorRef } from '@angular/core';
 
-import {PageAnimation} from "./shared/page.animation";
+import { PageAnimation } from './shared/page.animation';
 
 import {
   SafeHtml,
   SafeResourceUrl,
   DomSanitizer,
-} from "@angular/platform-browser";
+} from '@angular/platform-browser';
 
 export type MediaType = 'image' | 'iframe';
 
@@ -26,7 +26,7 @@ export interface CarouselMedia {
 })
 export class CarouselComponent {
   private static instance = 0;
-  private carouselId = "rc-carousel-id" + CarouselComponent.instance++;
+  private carouselId = 'rc-carousel-id' + CarouselComponent.instance++;
   private activeIndex = 0;
   private state: string = 'none';
 
@@ -44,12 +44,12 @@ export class CarouselComponent {
   };
 
   isActive = (index: number, media: CarouselMedia): boolean => {
-    return this.activeIndex == index;
+    return this.activeIndex === index;
   };
 
   back = (event: Event) => {
     this.state = 'prev';
-    this.direct(event, (this.activeIndex == 0) ? this.media.length - 1 : this.activeIndex - 1);
+    this.direct(event, (this.activeIndex === 0) ? this.media.length - 1 : this.activeIndex - 1);
   };
 
   forward = (event: Event) => {
@@ -61,11 +61,11 @@ export class CarouselComponent {
     let fromIndex = this.activeIndex;
     let toIndex = index % this.media.length;
 
-    if (fromIndex != toIndex) {
+    if (fromIndex !== toIndex) {
       this.changeDetector.detectChanges();
       this.activeIndex = toIndex;
       console.log(this.state);
-      if (this.state != 'prev' && this.state != 'next') {
+      if (this.state !== 'prev' && this.state !== 'next') {
         this.state = 'incoming';
         this.changeDetector.detectChanges();
       }

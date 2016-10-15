@@ -1,4 +1,4 @@
-import {ActivatedRoute} from "@angular/router";
+import { ActivatedRoute } from '@angular/router';
 
 import {
   Component,
@@ -6,11 +6,11 @@ import {
   AfterViewInit,
   ViewEncapsulation,
   ChangeDetectionStrategy
-} from "@angular/core";
+} from '@angular/core';
 
-import {PageAnimation} from "./shared/page.animation";
-import {AnalyticsService, MemoirService, TooltipService} from "../services";
-import {StyleConfig} from "../style.config";
+import { PageAnimation } from './shared/page.animation';
+import { AnalyticsService, MemoirService, TooltipService } from '../services';
+import { StyleConfig } from '../style.config';
 
 @Component({
   selector: 'rc-page',
@@ -44,7 +44,6 @@ export class PageComponent implements AfterViewInit {
     this.tooltipService.enableTooltips('rc-page');
       this.route.params.subscribe(params => {
       let id = params['id'];
-      console.debug('params id: ' + id);
       if (id) {
         let anchor = document.getElementById(id);
         if (anchor) {
@@ -56,10 +55,7 @@ export class PageComponent implements AfterViewInit {
       }
       else document.body.scrollTop = 0;
 
-      //setTimeout(() => {
-        this.state = PageAnimation.FADE_IN_ANIMATION_FINAL_STATE;
-      //}, 50);
-        //this.changeDetector.detectChanges();
+      this.state = PageAnimation.FADE_IN_ANIMATION_FINAL_STATE;
     });
   }
 }

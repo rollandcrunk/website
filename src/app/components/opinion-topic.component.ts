@@ -1,6 +1,6 @@
-import {ViewEncapsulation, Component} from "@angular/core";
+import { ViewEncapsulation, Component } from '@angular/core';
 
-import {Quote, QuoteService, ObservationService} from "../services";
+import { Quote, QuoteService, ObservationService } from '../services';
 
 @Component({
   selector: 'rc-opinion-topic',

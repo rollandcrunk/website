@@ -1,6 +1,6 @@
-import {Component, Input} from "@angular/core";
+import { Component, Input } from '@angular/core';
 
-import {SafeHtml, DomSanitizer} from "@angular/platform-browser";
+import { SafeHtml, DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'rc-trusted-content',

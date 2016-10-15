@@ -1,7 +1,7 @@
-import {ViewEncapsulation, Component} from "@angular/core";
+import { ViewEncapsulation, Component } from '@angular/core';
 
-import {MemoirService} from "../services";
-import {CarouselMedia} from "./carousel.component";
+import { MemoirService } from '../services';
+import { CarouselMedia } from './carousel.component';
 
 @Component({
   selector: 'rc-gallery-topic',

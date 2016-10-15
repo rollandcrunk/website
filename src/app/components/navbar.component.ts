@@ -1,7 +1,7 @@
-import {Component, ViewChild, ElementRef, Renderer} from "@angular/core";
-import {Router, Event, NavigationStart} from "@angular/router";
+import { Component, ViewChild, ElementRef, Renderer } from '@angular/core';
+import { Router, Event, NavigationStart } from '@angular/router';
 
-import {PlaceChangeEvent} from "../event/place-change.event";
+import { PlaceChangeEvent } from '../event/place-change.event';
 
 const menuVisibleClassName = 'in';
 
@@ -29,7 +29,7 @@ export class NavbarComponent {
               private renderer: Renderer,
               private placeChangeEvent: PlaceChangeEvent) {
     router.events.subscribe((e) => this.handleRouteChange(e));
-    placeChangeEvent.subscribe((places) => this.handlePlaceEvent(places))
+    placeChangeEvent.subscribe((places) => this.handlePlaceEvent(places));
   }
 
   private handleRouteChange = (event: Event) => {

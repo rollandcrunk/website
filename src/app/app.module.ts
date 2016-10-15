@@ -1,7 +1,7 @@
-import {NgModule} from "@angular/core/";
-import {BrowserModule} from "@angular/platform-browser";
+import {NgModule} from '@angular/core/';
+import {BrowserModule} from '@angular/platform-browser';
 
-import {routing} from "./routes";
+import {routing} from './routes';
 
 import {
   MainComponent,
@@ -21,14 +21,14 @@ import {
   NotFoundComponent,
   PageComponent,
   NavbarComponent
-} from "./components";
+} from './components';
 
-import {LinkForDirective, ScrollSpy} from "./directives";
+import {LinkForDirective, ScrollSpyDirective} from './directives';
 
-import {PlaceChangeEvent} from "./event/place-change.event";
-import {StyleConfig} from "./style.config";
-import {AnalyticsService} from "./services/analytics.service";
-import {FooterComponent} from "./components/footer.component";
+import {PlaceChangeEvent} from './event/place-change.event';
+import {StyleConfig} from './style.config';
+import {AnalyticsService} from './services/analytics.service';
+import {FooterComponent} from './components/footer.component';
 
 @NgModule({
   imports:  [
@@ -44,7 +44,7 @@ import {FooterComponent} from "./components/footer.component";
     WorkTopicComponent,
     OpinionTopicComponent,
     CarouselComponent,
-    ScrollSpy,
+    ScrollSpyDirective,
     WelcomeComponent,
     AboutComponent,
     LinksComponent,

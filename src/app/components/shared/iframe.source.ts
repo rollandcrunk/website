@@ -1,15 +1,1 @@
-export const MC_ROUTE_MAP: string =
-    "https://www.google.com/maps/embed?pb=!1m70!1m12!1m3!1d20115918.1936426!2d-110.090727834669!3d36.422146178990786"
-    + "!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m55!3e0!4m5!1s0x89e60e66cb34f423%3A0xd8350e1261ae8e04"
-    + "!2s18+Broad+Street%2C+New+London%2C+CT+06320!3m2!1d41.3559651!2d-72.1002379!4m5"
-    + "!1s0x89c3e2668fa28e75%3A0x86e32e3088235a5c!2sNew+Jersey+Turnpike%2C+Cherry+Hill%2C+NJ!3m2!1d39.8965045"
-    + "!2d-74.9906434!4m5!1s0x889a4e1df14cf8a9%3A0x4ce80e5477899e1a!2sMobile%2C+AL!3m2!1d30.6953657!2d-88.0398912"
-    + "!4m5!1s0x8620a454b2118265%3A0xdb065be85e22d3b4!2sNew+Orleans%2C+LA!3m2!1d29.9510658!2d-90.0715323!4m5"
-    + "!1s0x863b842b00bdcb27%3A0x42b98dd6b9a77382!2sLake+Charles%2C+LA!3m2!1d30.2265949!2d-93.2173758!4m5"
-    + "!1s0x865c58af04d00eaf%3A0x856e13b10a016bc!2sSan+Antonio%2C+TX!3m2!1d29.4241219!2d-98.49362819999999!4m5"
-    + "!1s0x86e73f8bc5fe3b69%3A0xe39184e3ab9d0222!2sEl+Paso%2C+TX!3m2!1d31.761877799999997!2d-106.48502169999999"
-    + "!4m5!1s0x80d121436bd112e7%3A0x2c6ac2ec5ab225ae!2sBlythe%2C+CA!3m2!1d33.6177725!2d-114.58826069999999!4m5"
-    + "!1s0x80824df7ef94579d%3A0x18dfc0742c735b27!2sElk+Creek%2C+CA!3m2!1d39.6050699!2d-122.5398032!5e1!3m2!1sen!2sus"
-    + "!4v1471131209168";
-
-export const SEARS_POINT_LAP: string = "https://www.youtube.com/embed/WQPevaUvotI?html5=1&t=66000";
+export const SEARS_POINT_LAP = 'https://www.youtube.com/embed/WQPevaUvotI?html5=1&t=66000';

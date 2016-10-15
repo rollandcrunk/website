@@ -1,4 +1,4 @@
-import {ViewEncapsulation, Component, Input, ElementRef, Renderer, AfterViewInit} from "@angular/core";
+import { ViewEncapsulation, Component, Input, ElementRef, Renderer, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'rc-career-highlight',

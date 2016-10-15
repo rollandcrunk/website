@@ -1,4 +1,4 @@
-import {style, trigger, state, transition, animate, keyframes} from "@angular/core";
+import { style, trigger, state, transition, animate, keyframes } from '@angular/core';
 
 const createdState = 'created';
 const readyState = 'ready';
