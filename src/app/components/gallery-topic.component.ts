@@ -11,7 +11,7 @@ import { CarouselMedia } from './carousel.component';
       <p class="lead">
         Photographs.
       </p>
-      <p><rc-carousel [media]="memoir('gallery')"></rc-carousel></p>
+      <p><rc-carousel topic='gallery' [media]="memoir('gallery')"></rc-carousel></p>
   </div>
   `,
   encapsulation: ViewEncapsulation.None,

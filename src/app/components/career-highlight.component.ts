@@ -1,4 +1,5 @@
 import { ViewEncapsulation, Component, Input, ElementRef, Renderer, AfterViewInit } from '@angular/core';
+import { AnalyticsService } from '../services';
 
 @Component({
   selector: 'rc-career-highlight',
@@ -28,11 +29,13 @@ import { ViewEncapsulation, Component, Input, ElementRef, Renderer, AfterViewIni
   encapsulation: ViewEncapsulation.None,
 })
 export class CareerHighlightComponent implements AfterViewInit {
+  @Input() title: string = 'Untitled';
   @Input() activate: string;
   @Input() categories: string[];
 
   constructor(private elementRef: ElementRef,
-              private renderer: Renderer) {}
+              private renderer: Renderer,
+              private analyticsService: AnalyticsService) {}
 
   ngAfterViewInit(): any {
     if (this.activate) this.activateContent(this.activate);
@@ -43,6 +46,7 @@ export class CareerHighlightComponent implements AfterViewInit {
   }
 
   private activateContent = (activate: string) => {
+    this.analyticsService.timelineEvent(this.title, activate);
     let categoryContent = this.elementRef.nativeElement.getElementsByClassName('category');
     for (let i = 0; i < categoryContent.length; ++i) {
       let element: HTMLElement = categoryContent[i];

@@ -21,7 +21,7 @@ import { ExperienceService, Juncture } from '../services';
         <rc-timeline *ngIf="junctures" subject="Timeline">
           <rc-timeline-event *ngFor="let juncture of junctures; let i = index;" [inverted]="i % 2"
                              title="{{juncture.name}}" timeframe="{{juncture.caption}}" [badge]="badge(i)">
-            <rc-career-highlight [categories]="juncture.categories" [activate]="juncture.categories[0]">
+            <rc-career-highlight [title]="juncture.name" [categories]="juncture.categories" [activate]="juncture.categories[0]">
               <ul *ngFor="let category of juncture.categories" class="category {{category}}">
                 <li *ngFor="let item of juncture.category(category)">
                   <rc-trusted-content [content]="item"></rc-trusted-content>

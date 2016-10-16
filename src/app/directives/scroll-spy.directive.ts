@@ -4,6 +4,7 @@ import { Location } from '@angular/common';
 
 import { PlaceChangeEvent } from '../event/place-change.event';
 import { StyleConfig } from '../style.config';
+import { AnalyticsService } from '../services';
 
 class Place {
   id: string;
@@ -26,7 +27,8 @@ export class ScrollSpyDirective implements AfterViewInit {
   constructor(styleConfig: StyleConfig,
               private elementRef: ElementRef,
               private location: Location,
-              private placeChangeEvent: PlaceChangeEvent) {
+              private placeChangeEvent: PlaceChangeEvent,
+              private analyticsService: AnalyticsService) {
     this.fixedArtifactsTop = styleConfig.fixedArtifactsTop;
   }
 
@@ -48,6 +50,7 @@ export class ScrollSpyDirective implements AfterViewInit {
     let unique = places.filter((value: string, index: number, self: string[]) => self.indexOf(value) >= 0);
     let location = '/' + unique.join('/');
     if (this.validLocation(location) && location !== this.lastLocation) {
+      this.analyticsService.scrollEvent(location);
       this.lastLocation = location;
       this.location.replaceState(this.lastLocation);
     }

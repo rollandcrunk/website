@@ -15,7 +15,7 @@ import { PageAnimation } from './shared/page.animation';
         Other websites of mine.
         <ul>
           <li>
-            <a href="http://crunk.net" target="_blank">Crunk.net</a> - My first personal website.
+            <a href="http://crunk.net" target="_blank" rcClickAudit>Crunk.net</a> - My first personal website.
             All of the original content was taken down for reconstruction and
             never reappeared. Instead, being replaced with a CSS themes demo that gets a refresh every
             few years when its technology gets stale and there is new technology that I want to play with.
@@ -26,7 +26,7 @@ import { PageAnimation } from './shared/page.animation';
         User facing commercial sites I've helped build:
         <ul>
           <li>
-            <a href="https://www.google.com/about/careers/jobs" target="_blank">Google Careers</a>
+            <a href="https://www.google.com/about/careers/jobs" target="_blank" rcClickAudit>Google Careers</a>
             Find a job at a pretty cool place to work.
           </li>
         </ul>
@@ -34,24 +34,24 @@ import { PageAnimation } from './shared/page.animation';
           Sites I frequent.
         <ul>
           <li>
-            <a href="http://reason.com/" target="_blank">Reason Magazine</a> 
+            <a href="http://reason.com/" target="_blank" rcClickAudit>Reason Magazine</a> 
             - For news, information, and opinion that is in rough alignment with my own.
           </li>
           <li>
-            <a href="http://antiwar.com/" target="_blank">AntiWar.COM</a> 
+            <a href="http://antiwar.com/" target="_blank" rcClickAudit>AntiWar.COM</a> 
             - A collection of news and information that generally goes under reported by main stream media. 
           </li>
           <li>
-            <a href="https://dzone.com/" target="_blank">DZone</a> 
+            <a href="https://dzone.com/" target="_blank" rcClickAudit>DZone</a> 
             - Technical articles relating to a broad range of topics in software development.
           </li>
           <li>
-            <a href="http://stackoverflow.com/" target="_blank">Stack Overflow</a> 
+            <a href="http://stackoverflow.com/" target="_blank" rcClickAudit>Stack Overflow</a> 
             - My navigation here is typically from search results hits. An extraordinarily
             valuable resource for software developers.
           </li>
           <li>
-            <a href="https://www.smashingmagazine.com/" target="_blank">Smashing Magazine</a> 
+            <a href="https://www.smashingmagazine.com/" target="_blank" rcClickAudit>Smashing Magazine</a> 
             - Helpful articles covering different aspects of web design and development.
           </li>
         </ul>

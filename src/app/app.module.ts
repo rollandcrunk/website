@@ -23,7 +23,7 @@ import {
   NavbarComponent
 } from './components';
 
-import {LinkForDirective, ScrollSpyDirective} from './directives';
+import { LinkForDirective, ScrollSpyDirective, ClickAuditDirective}  from './directives';
 
 import {PlaceChangeEvent} from './event/place-change.event';
 import {StyleConfig} from './style.config';
@@ -39,6 +39,7 @@ import {FooterComponent} from './components/footer.component';
     MainComponent,
     LogoComponent,
     LinkForDirective,
+    ClickAuditDirective,
     OfNoteTopicComponent,
     GalleryTopicComponent,
     WorkTopicComponent,

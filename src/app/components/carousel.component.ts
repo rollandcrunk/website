@@ -8,6 +8,8 @@ import {
   DomSanitizer,
 } from '@angular/platform-browser';
 
+import { AnalyticsService } from '../services';
+
 export type MediaType = 'image' | 'iframe';
 
 export interface CarouselMedia {
@@ -34,10 +36,12 @@ export class CarouselComponent {
   private activeIndex = 0;
   private state: string = 'none';
 
+  @Input('topic') topic: string = 'untitled';
   @Input('media') media: CarouselMedia[] = [];
 
   constructor(private sanitizer: DomSanitizer,
-              private changeDetector: ChangeDetectorRef) {}
+              private changeDetector: ChangeDetectorRef,
+              private analyticsService: AnalyticsService) {}
 
   trustHtml = (resource: string): SafeHtml => {
     return this.sanitizer.bypassSecurityTrustHtml(resource);
@@ -68,7 +72,6 @@ export class CarouselComponent {
     if (fromIndex !== toIndex) {
       this.changeDetector.detectChanges();
       this.activeIndex = toIndex;
-      console.log(this.state);
       if (this.state !== 'prev' && this.state !== 'next') {
         this.state = 'incoming';
         this.changeDetector.detectChanges();
@@ -76,6 +79,7 @@ export class CarouselComponent {
       this.state = 'base';
       this.changeDetector.detectChanges();
     }
+    this.analyticsService.carouselEvent(this.topic, fromIndex, toIndex);
     event.stopPropagation();
   };
 }

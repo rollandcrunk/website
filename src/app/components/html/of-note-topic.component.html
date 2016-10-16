@@ -8,34 +8,34 @@
     <br><span class="text-muted small">[Click or tap items below for details]</span>
   </p>
   <ul class="rc-expandable-list">
-    <li class="rc-expandable" (click)="expand($event)">
+    <li class="rc-expandable" (click)="expand($event, 'sub')">
       Served 3 years aboard a nuclear attack submarine.
       <div class="rc-media">
-        <rc-carousel [media]="memoir('sub')"></rc-carousel>
+        <rc-carousel topic="sub" [media]="memoir('sub')"></rc-carousel>
       </div>
     </li>
-    <li class="rc-expandable" (click)="expand($event)">
+    <li class="rc-expandable" (click)="expand($event, 'ride')">
       Drove a motorcycle from coast-to-coast across the continental US.
       <div class="rc-media">
-        <rc-carousel [media]="memoir('ride')"></rc-carousel>
+        <rc-carousel topic="ride" [media]="memoir('ride')"></rc-carousel>
       </div>
     </li>
-    <li class="rc-expandable" (click)="expand($event)">
+    <li class="rc-expandable" (click)="expand($event, 'business')">
       Founded and managed a foreign corporation.
       <div class="rc-media">
-        <rc-carousel [media]="memoir('business')"></rc-carousel>
+        <rc-carousel topic="business" [media]="memoir('business')"></rc-carousel>
       </div>
     </li>
-    <li class="rc-expandable" (click)="expand($event)">
+    <li class="rc-expandable" (click)="expand($event, 'racer')">
       Competed in AFM sanctioned motorcycle road racing events.
       <div class="rc-media">
-        <rc-carousel [media]="memoir('racer')"></rc-carousel>
+        <rc-carousel topic="racer" [media]="memoir('racer')"></rc-carousel>
       </div>
     </li>
-    <li class="rc-expandable" (click)="expand($event)">
+    <li class="rc-expandable" (click)="expand($event, 'traveller')">
       Visited 34 states and 11 foreign countries.
       <div class="rc-media">
-        <rc-carousel [media]="memoir('traveller')"></rc-carousel>
+        <rc-carousel topic="traveller" [media]="memoir('traveller')"></rc-carousel>
       </div>
     </li>
   </ul>
